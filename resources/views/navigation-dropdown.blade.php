@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <!-- Settings Dropdown -->
+            <!-- Menú desplegable de configuración -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -114,7 +114,7 @@
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
+    <!-- Menú de navegación receptivo -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
@@ -122,7 +122,7 @@
             </x-jet-responsive-nav-link>
         </div>
 
-        <!-- Responsive Settings Options -->
+        <!-- Opciones de configuración receptiva -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="flex items-center px-4">
                 <div class="flex-shrink-0">
@@ -147,7 +147,7 @@
                     </x-jet-responsive-nav-link>
                 @endif
 
-                <!-- Authentication -->
+                <!-- Autenticacion -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
@@ -158,7 +158,7 @@
                     </x-jet-responsive-nav-link>
                 </form>
 
-                <!-- Team Management -->
+                <!-- Administrador de equipo -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="border-t border-gray-200"></div>
 

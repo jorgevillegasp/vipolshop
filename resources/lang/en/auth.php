@@ -4,12 +4,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Authentication Language Lines
+    | Líneas de idioma de autenticación
     |--------------------------------------------------------------------------
     |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
+    | Las siguientes líneas de idioma se utilizan durante la autenticación para varios
+    | mensajes que debemos mostrar al usuario. Eres libre de modificar
+    | estas líneas de idioma de acuerdo con los requisitos de su aplicación.
     |
     */
 

@@ -7,9 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Acerca de Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel es un marco de aplicación web con sintaxis expresiva y elegante. Creemos que el desarrollo debe ser una experiencia agradable y creativa para ser verdaderamente satisfactorio. Laravel elimina el dolor del desarrollo al aliviar las tareas comunes utilizadas en muchos proyectos web, tales como:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
@@ -19,17 +19,18 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel es accesible, potente y proporciona herramientas necesarias para aplicaciones grandes y robustas.
 
-## Learning Laravel
+## Aprendizaje De Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Laravel tiene la [documentation](https://laravel.com/docs) y la biblioteca de tutoriales en video más extensa y completa de todos los marcos de aplicaciones web modernos, por lo que es muy fácil comenzar con el marco.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Si no tiene ganas de leer, [Laracasts](https://laracasts.com) puede ayudar. Laracasts contiene más de 1500 videos tutoriales sobre una variedad de temas que incluyen Laravel, PHP moderno, pruebas unitarias y JavaScript. Mejore sus habilidades buscando en nuestra completa biblioteca de videos.
+
 
 ## Laravel Sponsors
+Nos gustaría extender nuestro agradecimiento a los siguientes patrocinadores por financiar el desarrollo de Laravel. Si está interesado en convertirse en patrocinador, visite Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
 ### Premium Partners
 
@@ -44,18 +45,18 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[DevSquad](https://devsquad.com)**
 - **[OP.GG](https://op.gg)**
 
-## Contributing
+## Contribuyendo
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+¡Gracias por considerar contribuir al marco de Laravel! La guía de contribución se puede encontrar en la [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Código de Conducta
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Para asegurarse de que la comunidad de Laravel sea bienvenida para todos, revise y cumpla el [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+## Vulnerabilidades de seguridad
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Si descubre una vulnerabilidad de seguridad dentro de Laravel, envíe un correo electrónico a Taylor Otwell a través de [taylor@laravel.com](mailto:taylor@laravel.com). Todas las vulnerabilidades de seguridad se abordarán de inmediato.
 
-## License
+## Licencia
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+El marco de Laravel es un software de código abierto con licencia de [MIT license](https://opensource.org/licenses/MIT).

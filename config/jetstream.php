@@ -9,9 +9,9 @@ return [
     | Jetstream Stack
     |--------------------------------------------------------------------------
     |
-    | This configuration value informs Jetstream which "stack" you will be
-    | using for your application. In general, this value is set for you
-    | during installation and will not need to be changed after that.
+    | Este valor de configuración informa a Jetstream qué "pila" será
+    | usando para su aplicación. En general, este valor se establece para usted
+    | durante la instalación y no será necesario cambiarlo después.
     |
     */
 
@@ -19,12 +19,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Features
-    |--------------------------------------------------------------------------
+    | Caracteristicas
+    | ------------------------------------------------- -------------------------
     |
-    | Some of Jetstream's features are optional. You may disable the features
-    | by removing them from this array. You're free to only remove some of
-    | these features or you can even remove all of these if you need to.
+    | Algunas de las funciones de Jetstream son opcionales. Puede desactivar las funciones
+    | eliminándolos de esta matriz. Eres libre de eliminar solo algunos
+    | estas características o incluso puede eliminarlas todas si es necesario.
     |
     */
 

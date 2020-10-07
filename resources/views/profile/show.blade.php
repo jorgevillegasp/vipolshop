@@ -1,4 +1,5 @@
 <x-app-layout>
+    <h2>Estamos dentro de profile/show.blade.php</h2>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
@@ -11,7 +12,7 @@
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
                 <x-jet-section-border />
-            
+
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.update-password-form')
                 </div>
