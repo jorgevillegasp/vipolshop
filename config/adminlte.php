@@ -4,48 +4,49 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Título
+    | Título que aparece en la pestaña
     | ------------------------------------------------- -------------------------
     |
-    | Aquí puede cambiar el título predeterminado de su panel de administración.
+    | Aquí puede cambiar el título predeterminado  que aparece en la pestaña
     |
     | Para obtener instrucciones más detalladas, puede mirar aquí:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/#61-title
+    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/6.-Basic-Configuration
     |
     */
 
-    'title' => 'vipolshop',
-    'title_prefix' => '',
+    'title' => '',
+    'title_prefix' => 'vipolshop |',
     'title_postfix' => '',
 
     /*
     |--------------------------------------------------------------------------
-    | Favicon
+    | Favicon - icono que aparece en la barra de pestañas
     |--------------------------------------------------------------------------
     |
-    | Here you can activate the favicon.
+    | Aquí puede activar el favicon.
     |
-    | For more detailed instructions you can look here:
+    | Para obtener instrucciones más detalladas, puede mirar aquí:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#62-favicon
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
     |--------------------------------------------------------------------------
-    | Logo
+    | Logotipo del Menu
     |--------------------------------------------------------------------------
     |
-    | Here you can change the logo of your admin panel.
+    | Aquí puede cambiar el logo de su panel de administración.
+    | Aquel que aparece en el menu lateral izquierdo en la parte superior
     |
-    | For more detailed instructions you can look here:
+    | Para obtener instrucciones más detalladas, puede mirar aquí:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#63-logo
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Vipolshop</b>CV',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -54,22 +55,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | User Menu
+    | Menu de Usuario (Lado superior derecha)
     |--------------------------------------------------------------------------
     |
-    | Here you can activate and change the user menu.
+    | Aquí puede activar y cambiar el menú de usuario.
     |
-    | For more detailed instructions you can look here:
+    | Para obtener instrucciones más detalladas, puede mirar aquí:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#64-user-menu
     |
     */
 
-    'usermenu_enabled' => true,
-    'usermenu_header' => false,
-    'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
-    'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_enabled' => true, // Si desea habilitar el menú de usuario en lugar del botón de cierre de sesión predeterminado
+    'usermenu_header' => true,  // Si desea habilitar la sección de encabezado dentro del menú de usuario.
+    'usermenu_header_class' => 'bg-primary', //Clases adicionales para la sección de encabezado dentro del menú de usuario.
+    'usermenu_image' => true, //Si desea habilitar la imagen de usuario para el menú de usuario y la pantalla de bloqueo.
+    'usermenu_desc' => true, // Si desea habilitar la descripción del usuario para el menú de usuarios.
+    'usermenu_profile_url' => true, // Si se debe habilitar si la URL del perfil de usuario se puede establecer dinámicamente para el usuario en lugar de utilizar la opción de configuración .
 
     /*
     |--------------------------------------------------------------------------
@@ -83,11 +84,11 @@ return [
     |
     */
 
-    'layout_topnav' => null,
-    'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
-    'layout_fixed_footer' => null,
+    'layout_topnav' => null,    //Activa/deshabilita el diseño de solo navegación superior. No se puede usar con .layout_boxed
+    'layout_boxed' => null,     //Habilita/deshabilita el diseño en caja que estira el ancho solo a 1250px. No se puede usar con .layout_topnav
+    'layout_fixed_sidebar' => true, //Activa/desactiva el modo de barra lateral fija.
+    'layout_fixed_navbar' => true,  //Activa/desactiva el modo de barra de navegación fija (navegación superior).
+    'layout_fixed_footer' => null,  //Activa/deshabilita el modo de pie de página fijo.
 
     /*
     |--------------------------------------------------------------------------
@@ -95,6 +96,7 @@ return [
     | ------------------------------------------------- -------------------------
     |
     | Aquí puede cambiar el aspecto y el comportamiento de las vistas de autenticación.
+    | LOGIN y REGISTRO
     |
     | Para obtener instrucciones más detalladas, puede mirar aquí:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#721-authentication-views-classes
@@ -104,6 +106,7 @@ return [
     'classes_auth_card' => 'card-outline card-primary',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
+    
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
     'classes_auth_btn' => 'btn-flat btn-primary',
@@ -232,86 +235,52 @@ return [
 
     'menu' => [
         [
-            'text' => 'Buscar',
+            'text'   => 'Buscar',
             'search' => true,
             'topnav' => true,
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text'  =>  'blog',
+            'url'   =>  '#',
+            'can'   =>  'manage-blog',
         ],
         [
-            'text'        => 'Paginas',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'  =>  'Home',
+            'url'   =>  'home',
+            'icon'  =>  'fas fa-fw fa-tachometer-alt',
         ],
-        ['header' => 'Usuarios'],
+        ['header' => 'Almacen'],
         [
-            'text' => 'Perfil',
-            'url'  => 'admin/settings',
+            'text' => 'Productos',
+            'url'  => 'producto',
+            'icon' => 'fas fa-fw fa-tshirt',
+        ],
+        [
+            'text' => 'Compras',
+            'url'  => 'compra',
+            'icon' => 'fas fa-fw fa-cart-arrow-down',
+        ],
+        [
+            'text' => 'Ventas',
+            'url'  => 'venta',
+            'icon' => 'fas fa-fw fa-shopping-cart',
+        ],
+        ['header' => 'Administracion'],
+        [
+            'text' => 'Proveedores',
+            'url'  => 'proveedor',
+            'icon' => 'fas fa-fw fa-hands-helping',
+        ],
+        [
+            'text' => 'Clientes',
+            'url'  => 'cliente',
             'icon' => 'fas fa-fw fa-user',
         ],
+        ['header' => 'Reportes'],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text'  =>  'Facturas',
+            'url'   =>  'factura',
+            'icon'  =>  'fas fa-fw fa-file',
         ],
     ],
 
@@ -349,29 +318,30 @@ return [
     |
     */
 
+
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],
         ],
         'Select2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -396,7 +366,7 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',

@@ -58,4 +58,25 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     *
+     * Funciones solo para probar el funcionamiento de admiLTE v3
+     * que se encuentra en la barra superior derecha.
+     *
+     */
+    public function adminlte_image()
+    {
+        return 'https://picsum.photos/300/300';
+    }
+
+    public function adminlte_desc()
+    {
+        return 'Administrador';
+    }
+
+    public function adminlte_profile_url()
+    {
+        return 'profile/username';
+    }
 }

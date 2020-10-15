@@ -7,9 +7,9 @@ return [
     | Application Name
     |--------------------------------------------------------------------------
     |
-    | This value is the name of your application. This value is used when the
-    | framework needs to place the application's name in a notification or
-    | any other location as required by the application or its packages.
+    | Este valor es el nombre de su aplicación. Este valor se utiliza cuando
+    | el marco necesita colocar el nombre de la aplicación en una notificación
+    | o en cualquier otra ubicación según lo requiera la aplicación o sus paquetes.
     |
     */
 
@@ -20,9 +20,9 @@ return [
     | Application Environment
     |--------------------------------------------------------------------------
     |
-    | This value determines the "environment" your application is currently
-    | running in. This may determine how you prefer to configure various
-    | services the application utilizes. Set this in your ".env" file.
+    | Este valor determina el "entorno" en el que se ejecuta actualmente su aplicación.
+    | Esto puede determinar cómo prefiere configurar los diversos servicios
+    | que utiliza la aplicación. Establezca esto en su archivo ".env".
     |
     */
 
@@ -33,9 +33,9 @@ return [
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
-    | When your application is in debug mode, detailed error messages with
-    | stack traces will be shown on every error that occurs within your
-    | application. If disabled, a simple generic error page is shown.
+    | Cuando su aplicación está en modo de depuración, se mostrarán mensajes de error detallados
+    | con seguimientos de pila en cada error que ocurra dentro de su aplicación.
+    | Si está deshabilitado, se muestra una página de error genérico simple.
     |
     */
 
@@ -74,22 +74,24 @@ return [
     | Application Locale Configuration
     |--------------------------------------------------------------------------
     |
-    | The application locale determines the default locale that will be used
-    | by the translation service provider. You are free to set this value
-    | to any of the locales which will be supported by the application.
+    | La configuración regional de la aplicación determina la configuración regional
+    | predeterminada que se utilizará por el proveedor de servicios de traducción.
+    | Eres libre de establecer este valor a cualquiera de las configuraciones
+    | regionales que admitirá la aplicación.
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
     |--------------------------------------------------------------------------
     |
-    | The fallback locale determines the locale to use when the current one
-    | is not available. You may change the value to correspond to any of
-    | the language folders that are provided through your application.
+    | La configuración regional alternativa determina la configuración regional
+    | que se utilizará cuando la actual no está disponible. Puede cambiar
+    | el valor para que corresponda a cualquiera de las carpetas de idiomas
+    | que se proporcionan a través de su aplicación.
     |
     */
 
@@ -100,9 +102,9 @@ return [
     | Faker Locale
     |--------------------------------------------------------------------------
     |
-    | This locale will be used by the Faker PHP library when generating fake
-    | data for your database seeds. For example, this will be used to get
-    | localized telephone numbers, street address information and more.
+    | Esta configuración regional será utilizada por la biblioteca PHP de Faker al generar
+    | datos para las semillas de su base de datos. Por ejemplo, esto se utilizará para obtener
+    | números de teléfono localizados, información de direcciones y más.
     |
     */
 
@@ -113,9 +115,9 @@ return [
     | Encryption Key
     |--------------------------------------------------------------------------
     |
-    | This key is used by the Illuminate encrypter service and should be set
-    | to a random, 32 character string, otherwise these encrypted strings
-    | will not be safe. Please do this before deploying an application!
+    | Esta clave es utilizada por el servicio de cifrado Illuminate y debe configurarse
+    | a una cadena aleatoria de 32 caracteres; de lo contrario, estas cadenas cifradas
+    | no estará seguro. ¡Haga esto antes de implementar una aplicación!
     |
     */
 
@@ -127,10 +129,9 @@ return [
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
-    |
-    | The service providers listed here will be automatically loaded on the
-    | request to your application. Feel free to add your own services to
-    | this array to grant expanded functionality to your applications.
+    | Los proveedores de servicios enumerados aquí se cargarán automáticamente en la
+    | solicitud a su aplicación. Siéntase libre de agregar sus propios servicios
+    | a esta matriz para otorgar mayor funcionalidad a sus aplicaciones.
     |
     */
 
@@ -184,9 +185,9 @@ return [
     | Class Aliases
     |--------------------------------------------------------------------------
     |
-    | This array of class aliases will be registered when this application
-    | is started. However, feel free to register as many as you wish as
-    | the aliases are "lazy" loaded so they don't hinder performance.
+    | Esta matriz de alias de clase se registrará cuando se inicie esta aplicación.
+    | Sin embargo, siéntase libre de registrar tantos como desee, ya que los alias
+    | se cargan "de forma diferida" para que no obstaculicen el rendimiento.
     |
     */
 
