@@ -25,7 +25,7 @@ class CreateVentasTable extends Migration
             // Campos que referenciaran a las claves secundarias
             $table->bigInteger('venta_detalle_id')->unsigned()->nullable();
             $table->bigInteger('cliente_id')->unsigned()->nullable();
-            $table->bigInteger('forma_pago_id')->unsigned()->nullable();
+            $table->bigInteger('forma_de_pago_id')->unsigned()->nullable();
 
             //Campos de datos
             $table->dateTime('fecha_venta')->nullable();
@@ -48,7 +48,7 @@ class CreateVentasTable extends Migration
                 ->onDelete('set null')
                 ->onUpdate('cascade');
             //Referencia a la tabla forma_de_pagos
-            $table->foreign('forma_pago_id')->references('id')->on('forma_de_pagos')
+            $table->foreign('forma_de_pago_id')->references('id')->on('forma_de_pagos')
                 ->onDelete('set null')
                 ->onUpdate('cascade');
         });

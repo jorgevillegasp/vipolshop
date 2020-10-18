@@ -27,6 +27,7 @@ class CreateVentaDetallesTable extends Migration
             $table->bigInteger('venta_id')->unsigned()->nullable();
 
             //Campos de datos
+            $table->decimal('cantidad')->unsigned();
             $table->decimal('costo_unidad', 3, 2);
             $table->decimal('descuento_unidad', 3, 2)->nullable();
             $table->decimal('total', 3, 2);

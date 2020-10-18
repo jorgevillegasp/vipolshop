@@ -22,7 +22,11 @@ class VentaDetallesFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'producto_id'  =>  $faker->rand(1,200),
+            'venta_id'  =>  $faker->rand(1,100),
+            'cantidad'  =>  $faker->rand(1,50),
+            'costo_unidad'  =>  $faker->rand(1,100),
+            'total'  =>  $faker->rand(50,250)
         ];
     }
 }

@@ -22,7 +22,11 @@ class CompraDetalleFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'compra_id'  =>  $faker->rand(1,20),
+            'producto_id'  =>  $faker->rand(1,100),
+            'cantidad'  =>  $faker->rand(1,50),
+            'valor_unidad'  =>  $faker->rand(1,100),
+            'total'  =>  $faker->rand(50,250)
         ];
     }
 }

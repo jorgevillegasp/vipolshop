@@ -22,7 +22,7 @@ class FormaDePagoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            
         ];
     }
 }

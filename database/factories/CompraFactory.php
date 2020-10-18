@@ -22,7 +22,11 @@ class CompraFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'Proveedor_id'  =>  $faker->rand(1,20),
+            'forma_de_pago' =>  $faker->rand(1,20),
+            'fecha_compra'  =>  $faker->date($format = 'Y-m-d', $max = 'now'),
+            'costo_compra'  =>  $faker->rand(1,100),
+            'iva'           =>  $faker->rand(12,12)
         ];
     }
 }
