@@ -9,6 +9,8 @@ class Proveedor extends Model
 {
     use HasFactory;
 
+    public $table = 'proveedores';
+
     /**
      * Indicamos que este Proveedor tiene muchas Compras
      */

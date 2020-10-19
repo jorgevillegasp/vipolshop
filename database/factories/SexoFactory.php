@@ -22,7 +22,7 @@ class SexoFactory extends Factory
     public function definition()
     {
         return [
-            //
+
         ];
     }
 }

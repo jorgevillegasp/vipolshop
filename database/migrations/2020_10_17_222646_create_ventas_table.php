@@ -29,10 +29,10 @@ class CreateVentasTable extends Migration
 
             //Campos de datos
             $table->dateTime('fecha_venta')->nullable();
-            $table->decimal('iva', 3, 2);
-            $table->decimal('subtotal', 3, 2);
-            $table->decimal('total', 3, 2);
-            $table->decimal('ganancia', 3, 2);
+            $table->decimal('iva', 5, 2);
+            $table->decimal('subtotal', 5, 2);
+            $table->decimal('total', 5, 2);
+            $table->decimal('ganancia', 5, 2);
 
             //Campos de registro de tiempo dado por laravel.
             //Se crean los campos: created_at y updated_at

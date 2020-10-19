@@ -9,6 +9,8 @@ class Sexo extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     /**
      * La tabla sexo tiene muchos clientes
      */

@@ -23,8 +23,8 @@ class CreateComprasTable extends Migration
             $table->bigInteger('proveedor_id')->unsigned()->nullable();
             $table->bigInteger('forma_de_pago_id')->unsigned()->nullable();
 
-            $table->string('fecha_compra', 45);
-            $table->integer('costo_compra');
+            $table->dateTime('fecha_compra');
+            $table->decimal('costo_compra',4,2);
             $table->decimal('iva', 3, 2)->nullable();
 
             $table->timestamps();

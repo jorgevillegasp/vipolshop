@@ -22,13 +22,14 @@ class VentaFactory extends Factory
     public function definition()
     {
         return [
-            'venta_detalle_id'  =>  $faker->rand(1,100),
-            'cliente_id'        =>  $faker->rand(1,100),
-            'forma_de_pago_id'  =>  $faker->rand(1,100),
-            'fecha_venta'       =>  $faker->rand(1,100),
-            'iva'               =>  $faker->rand(12,12),
-            'subtotal'          =>  $faker->rand(20,50),
-            'total'             =>  $faker->rand(50,120)
+            'venta_detalle_id'  =>  rand(1,500),
+            'cliente_id'        =>  rand(1,75),
+            'forma_de_pago_id'  =>  rand(1,2),
+            'fecha_venta'       =>  $this->faker->dateTime,
+            'iva'               =>  rand(12,12),
+            'subtotal'          =>  rand(20,50),
+            'total'             =>  rand(50,120),
+            'ganancia'          =>  rand(20,50),
         ];
     }
 }

@@ -22,7 +22,7 @@ class ColorFactory extends Factory
     public function definition()
     {
         return [
-            'color'  =>  $faker->colorName
+            'color'  =>  $this->faker->safeColorName,
         ];
     }
 }

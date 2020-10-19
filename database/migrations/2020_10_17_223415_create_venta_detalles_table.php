@@ -28,9 +28,9 @@ class CreateVentaDetallesTable extends Migration
 
             //Campos de datos
             $table->decimal('cantidad')->unsigned();
-            $table->decimal('costo_unidad', 3, 2);
-            $table->decimal('descuento_unidad', 3, 2)->nullable();
-            $table->decimal('total', 3, 2);
+            $table->decimal('costo_unidad', 4, 2)->unsigned();
+            $table->decimal('descuento_unidad', 4, 2)->nullable();
+            $table->decimal('total', 5, 2)->unsigned();
 
             //Campos de registro de tiempo dado por laravel.
             //Se crean los campos: created_at y updated_at

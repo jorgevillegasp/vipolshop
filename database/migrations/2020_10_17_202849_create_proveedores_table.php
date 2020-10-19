@@ -20,10 +20,10 @@ class CreateProveedoresTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('nombre', 45)->nullable();
-            $table->string('direccion', 45)->nullable();
+            $table->string('direccion')->nullable();
             $table->string('correo', 45)->nullable();
-            $table->integer('telefono')->nullable();
-            $table->decimal('deuda', 4, 2);
+            $table->string('telefono',25)->nullable();
+            $table->decimal('deuda', 5, 2);
 
             $table->timestamps();
         });

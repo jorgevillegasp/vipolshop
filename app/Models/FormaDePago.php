@@ -9,6 +9,8 @@ class FormaDePago extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     /**
      * Indicamos que esta tabla forma_de_pagos tiene muchas ventas
      */

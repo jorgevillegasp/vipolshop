@@ -9,6 +9,8 @@ class Talla extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function productos(){
         return  $this->hasMany(Producto::class);
     }

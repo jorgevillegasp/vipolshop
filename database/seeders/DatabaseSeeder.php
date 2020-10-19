@@ -2,48 +2,54 @@
 
 namespace Database\Seeders;
 
+use App\Models\Sexo;
+use App\Models\User;
+use App\Models\Color;
+use App\Models\Talla;
+use App\Models\Venta;
+use App\Models\Compra;
+use App\Models\Cliente;
+use App\Models\Producto;
+use App\Models\Proveedor;
+use App\Models\FormaDePago;
+use App\Models\VentaDetalle;
+use App\Models\CompraDetalle;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Seed the \application's database.
      *
      * @return void
      */
     public function run()
     {
-        
-        \App\Models\Sexo::factory()->create(['sexo'=>'Masculino']);
-        \App\Models\Sexo::factory()->create(['sexo'=>'Femenino']);
+        User::factory(10)->create();
 
-        \App\Models\Talla::factory()->create(['talla'=>'small']);
-        \App\Models\Talla::factory()->create(['talla'=>'medium']);
-        \App\Models\Talla::factory()->create(['talla'=>'large']);
-        \App\Models\Talla::factory()->create(['talla'=>'extra large']);
+        Sexo::factory()->create(['sexo' => 'Masculino']);
+        Sexo::factory()->create(['sexo' => 'Femenino']);
 
-        \App\Models\FormaDePago::factory()->create(['pago'=>'contado']);
-        \App\Models\FormaDePago::factory()->create(['pago'=>'credito']);
-        
+        Color::factory(20)->create();
 
+        Talla::factory()->create(['talla' => 'small']);
+        Talla::factory()->create(['talla' => 'medium']);
+        Talla::factory()->create(['talla' => 'large']);
+        Talla::factory()->create(['talla' => 'extra large']);
 
-        \App\Models\Producto::factory(200)->create();
+        FormaDePago::factory()->create(['pago' => 'contado']);
+        FormaDePago::factory()->create(['pago' => 'credito']);
 
-        \App\Models\Color::factory(20)->create();
+        Proveedor::factory(10)->create();
 
-        \App\Models\Venta::factory(100)->create();
-        \App\Models\VentaDetalle::factory(100)->create();
+        Producto::factory(200)->create();
 
-        \App\Models\Compra::factory(100)->create();
-        \App\Models\CompraDetalle::factory(100)->create();
+        Cliente::factory(75)->create();
 
-        \App\Models\Cliente::factory(100)->create();
+        Venta::factory(50)->create();
+        VentaDetalle::factory(500)->create();
 
-        \App\Models\Proveedor::factory(100)->create();
-        
-
-
-        
-        \App\Models\User::factory(10)->create();
+        Compra::factory(100)->create();
+        CompraDetalle::factory(100)->create();
     }
 }

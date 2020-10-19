@@ -21,7 +21,7 @@ class CreateColoresTable extends Migration
 
             //clave primaria
             $table->bigIncrements('id');
-            $table->string('nombre',50);
+            $table->string('color',50);
         });
     }
 

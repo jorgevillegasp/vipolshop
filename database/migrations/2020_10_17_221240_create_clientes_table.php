@@ -14,19 +14,20 @@ class CreateClientesTable extends Migration
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
+
             $table->bigIncrements('id');
 
             $table->bigInteger('sexo_id')->unsigned()->nullable();
 
-            $table->string('nombre_primero', 10)->nullable();
-            $table->string('nombre_segundo', 10)->nullable();
-            $table->string('apellido_paterno', 10)->nullable();
-            $table->string('apellido_materno', 10)->nullable();
-            $table->string('direccion', 45)->nullable();
-            $table->string('correo', 45)->nullable();
-            $table->integer('telefono')->nullable();
+            $table->string('nombre_primero', 25)->nullable();
+            $table->string('nombre_segundo', 25)->nullable();
+            $table->string('apellido_paterno', 25)->nullable();
+            $table->string('apellido_materno', 25)->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('correo', 50)->nullable();
+            $table->string('telefono',25)->nullable();
             $table->date('fecha_nacimiento')->nullable();
-            $table->decimal('deuda', 4, 2);
+            $table->decimal('deuda', 5,2);
 
             $table->timestamps();
 
