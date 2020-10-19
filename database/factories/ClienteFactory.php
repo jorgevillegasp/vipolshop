@@ -23,8 +23,9 @@ class ClienteFactory extends Factory
     {
         return [
             'sexo_id'         =>  rand(1,2),
-            'nombre_primero'  =>  $this->faker->firstNameMale,
-            'nombre_segundo'  =>  $this->faker->firstNameMale,
+            'cedula'          =>  $this->faker->randomNumber,
+            'nombre_primero'  =>  $this->faker->firstName,
+            'nombre_segundo'  =>  $this->faker->firstName,
             'apellido_paterno'=>  $this->faker->lastName,
             'apellido_materno'=>  $this->faker->lastName,
             'direccion'       =>  $this->faker->address,

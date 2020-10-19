@@ -19,6 +19,7 @@ class CreateClientesTable extends Migration
 
             $table->bigInteger('sexo_id')->unsigned()->nullable();
 
+            $table->string('cedula',25);
             $table->string('nombre_primero', 25)->nullable();
             $table->string('nombre_segundo', 25)->nullable();
             $table->string('apellido_paterno', 25)->nullable();

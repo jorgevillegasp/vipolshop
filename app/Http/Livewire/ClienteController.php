@@ -4,31 +4,37 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Http\Middleware;
-
+use Livewire\WithPagination;
 use Livewire\WithFileUploads;
+use App\Models\Cliente;
 
 class ClienteController extends Component
 {
-    //titulo de la pagina 
+    use WithPagination;
+
+    //titulo de la pagina
     public $titulo = 'Cliente';
     /**
      * $accion es la accion que se esta realizando en ese momento donde:
-     * 
+     *
      * 1 = activa la tabla del listado de clientes.
      * 2 = activa el formulario de ingreso.
      * 3 = activa el formulario de edicion.
      */
-    public  $accion = 1; 
+    public  $accion = 1;
 
     public function render()
     {
-        return view('cliente.index');
+
+        return view('cliente.index', [
+            'clientes' => Cliente::all()
+        ]);
     }
 
     public function agregar()
     {
         //activamos el formulario de agregar
-        $this->accion = 2; 
+        $this->accion = 2;
 
     }
 
@@ -38,9 +44,9 @@ class ClienteController extends Component
         $this->accion = 3;
     }
 
-    public function eliminar()
+    public function eliminar($id)
     {
-        
+        Cliente::destroy($id);
     }
 
     public function show()

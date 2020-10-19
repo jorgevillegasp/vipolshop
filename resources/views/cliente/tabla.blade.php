@@ -11,8 +11,10 @@
         <table id="miDataTable" class="table table-striped">
             <thead class="thead-plateada">
                 <tr>
+                    <th>ID</th>
                     <th>Cedula</th>
                     <th>Nombres</th>
+                    <th>Apellidos</th>
                     <th>Correo</th>
                     <th>Numero Telefono</th>
                     <th>Edad</th>
@@ -22,21 +24,23 @@
 
             <tbody>
 
-                @for ($i = 0; $i < 15; $i++)
+                @foreach ($clientes as $cliente)
                     <tr>
-                        <th>1316669991</th>
-                        <td>Jorge washington Villegas Polanco</td>
-                        <td>jorge@hotmail.com</td>
-                        <td>0958963256 - 052649566</td>
-                        <td>25</td>
+                        <th>{{ $cliente->id }}</th>
+                        <td>{{ $cliente->cedula }}</td>
+                        <td>{{ $cliente->nombre_primero }}</td>
+                        <td>{{ $cliente->apellido_paterno }}</td>
+                        <td>{{ $cliente->correo }}</td>
+                        <td>{{ $cliente->telefono }}</td>
+                        <td>{{ $cliente->fecha_nacimiento }}</td>
                         <td>
                             <button wire:click='editar' type="button" class="btn btn-info"><i
                                     class="fa fa-edit"></i></button>
-                            <button wire:click='eliminar' type="button" class="btn btn-danger"><i
+                            <button wire:click='eliminar({{ $cliente->id }})' type="button" class="btn btn-danger"><i
                                     class="fa fa-trash-alt"></i></button>
                         </td>
                     </tr>
-                @endfor
+                    @endforeach
 
 
             </tbody>

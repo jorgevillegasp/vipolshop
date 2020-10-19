@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         Sexo::factory()->create(['sexo' => 'Masculino']);
         Sexo::factory()->create(['sexo' => 'Femenino']);
 
-        Color::factory(20)->create();
+        Color::factory(10)->create();
 
         Talla::factory()->create(['talla' => 'small']);
         Talla::factory()->create(['talla' => 'medium']);

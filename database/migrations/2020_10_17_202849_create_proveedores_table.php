@@ -18,7 +18,7 @@ class CreateProveedoresTable extends Migration
              * Campos de la tabla
              ***************************************************/
             $table->bigIncrements('id');
-
+            $table->string('ruc',20);
             $table->string('nombre', 45)->nullable();
             $table->string('direccion')->nullable();
             $table->string('correo', 45)->nullable();
