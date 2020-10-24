@@ -1,0 +1,32 @@
+$blanco: White;
+$verde: green;
+$amarillo: yellow;
+
+$purpura: #5850EB;
+$purpura-100: #362DE8;
+$purpura-200: #3D33E8;
+
+
+
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+$tabla-head-bg:               $gray-200 !default;
+$tabla-head-color:            $gray-700 !default;
+$tabla-th-font-weight:        null !default;
+
+$tabla-purpura-color:            $blanco !default;
+$tabla-purpura-bg:               $blanco !default;
+$tabla-purpura-accent-bg:        rgba($blanco, .05) !default;
+$tabla-purpura-hover-color:      $tabla-purpura-color !default;
+$tabla-purpura-hover-bg:         rgba($blanco, .075) !default;
+$tabla-purpura-border-color:     lighten($tabla-purpura-bg, 7.5%) !default;
+
+$tabla-striped-order:         odd !default;

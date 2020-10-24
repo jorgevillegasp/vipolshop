@@ -10,16 +10,25 @@ use App\Models\Cliente;
 
 class ClienteController extends Component
 {
+    /**
+     *  use WithPagination
+     *
+     * Para corregir el error de la paginacion cuando se elimina un registro 
+     * de la tabla, no muestre el error al volver a cargar la tabla.
+    */
     use WithPagination;
+
+    //Indicamos que vamos a usar el tema de bootstrap en la paginación
+    protected $paginationTheme = 'bootstrap';
 
     //titulo de la pagina
     public $titulo = 'Cliente';
     /**
-     * $accion es la accion que se esta realizando en ese momento donde:
+     * $acción es la acción que se esta realizando en ese momento donde:
      *
      * 1 = activa la tabla del listado de clientes.
      * 2 = activa el formulario de ingreso.
-     * 3 = activa el formulario de edicion.
+     * 3 = activa el formulario de edición.
      */
     public  $accion = 1;
 
@@ -27,7 +36,7 @@ class ClienteController extends Component
     {
 
         return view('cliente.index', [
-            'clientes' => Cliente::all()
+            'clientes' => Cliente::paginate(8)
         ]);
     }
 

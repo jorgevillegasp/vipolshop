@@ -1,0 +1,36 @@
+.btn-primary {
+  color: $blanco;
+  background-color: $purpura;
+  border-color: $purpura;
+}
+
+.btn-primary:hover {
+  color: $blanco;
+  background-color: $purpura-100;
+  border-color: $purpura-200;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  color: $blanco;
+  background-color: $purpura-100;
+  border-color: $purpura-200;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  color: $blanco;
+  background-color: $purpura;
+  border-color: $purpura;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: $blanco;
+  background-color: $purpura-200;
+  border-color: #005cbf;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
