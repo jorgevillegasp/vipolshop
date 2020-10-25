@@ -13,7 +13,7 @@ class ClienteController extends Component
     /**
      *  use WithPagination
      *
-     * Para corregir el error de la paginacion cuando se elimina un registro 
+     * Para corregir el error de la paginacion cuando se elimina un registro
      * de la tabla, no muestre el error al volver a cargar la tabla.
     */
     use WithPagination;
@@ -23,6 +23,7 @@ class ClienteController extends Component
 
     //titulo de la pagina
     public $titulo = 'Cliente';
+
     /**
      * $acción es la acción que se esta realizando en ese momento donde:
      *
@@ -34,7 +35,6 @@ class ClienteController extends Component
 
     public function render()
     {
-
         return view('cliente.index', [
             'clientes' => Cliente::paginate(8)
         ]);

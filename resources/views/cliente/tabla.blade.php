@@ -8,7 +8,7 @@
             </div>
         </div>
         <br>
-        
+
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -38,7 +38,7 @@
                                         <td>{{ $cliente->telefono }}</td>
                                         <td>{{ $cliente->fecha_nacimiento }}</td>
                                         <td>
-        
+
                                             <button wire:click='editar' type="button" class="btn btn-info btn-sm"><i
                                                     class="fa fa-edit"></i></button>
                                             <button wire:click='eliminar({{ $cliente->id }})' type="button"
@@ -48,7 +48,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        
+
                     </div>
                     <!-- /.card-body -->
                 </div>

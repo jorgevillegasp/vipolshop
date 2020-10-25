@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\ClienteController;
+use App\Http\Livewire\ProveedorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,20 +24,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/cliente', ClienteController::Class);
+    Route::get('/cliente', ClienteController::Class);
+
+    Route::get('/proveedor', ProveedorController::Class);
+
+});
 
 
-
-/*
-Route::resource('/compra', CompraController::class);
-
-Route::resource('/producto', ProductoController::class);
-
-Route::resource('/venta', VentaController::class);
-
-Route::resource('/proveedor', ProveedorController::class);
-
-Route::resource('/cliente', ClienteController::class);
-*/
 
