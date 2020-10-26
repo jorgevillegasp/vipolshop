@@ -28,28 +28,27 @@
 @section('js')
 
 <script>
-    var elemento = 'tabla';
-    vista(elemento);
+    vista('tabla');
 
-    function vista(var elemento)
+    function vista(elemento)
     {
-        if(elemento = 'tabla')
-        {
-            mostrar('tabla');
-            ocultar('agregar');
-            ocultar('editar');
-        }
-        elseif(elemento = 'agregar')
+        if(elemento == 'agregar')
         {
             mostrar('agregar');
             ocultar('tabla');
             ocultar('editar');
         }
-        elseif(elemento = 'editar')
+        else if(elemento == 'editar')
         {
             mostrar('editar');
             ocultar('agregar');
             ocultar('tabla');
+        }
+        else
+        {
+            mostrar('tabla');
+            ocultar('agregar');
+            ocultar('editar');
         }
     }
 
@@ -57,8 +56,10 @@
     function ocultar(elemento){
         document.getElementById(elemento).style.display = 'none';
     }
+
     function mostrar(elemento){
         document.getElementById(elemento).style.display = 'block';
-        }
+    }
+
 </script>
 @stop
