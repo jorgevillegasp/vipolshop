@@ -9,15 +9,10 @@ use App\Models\Proveedor;
 
 class ProveedorController extends Component
 {
-    /**
-     *  use WithPagination
-     *
-     * Para corregir el error de la paginacion cuando se elimina un registro
-     * de la tabla, no muestre el error al volver a cargar la tabla.
-    */
+    //Para corregir el error de la paginacion cuando se elimina un registro de la tabla, no muestre el error al volver a cargar la tabla.
     use WithPagination;
 
-    //Indicamos que vamos a usar el tema de bootstrap en la paginación
+    //Indicamos que vamos a usar el tema de bootstrap en la paginación. Debido a que livewire usa por defecto Tailwind
     protected $paginationTheme = 'bootstrap';
 
     //titulo de la pagina
@@ -32,7 +27,24 @@ class ProveedorController extends Component
      */
     public  $accion = 1;
 
-    public $proveedor_id,$ruc,$nombre,$direccion,$correo,$telefono,$deuda;
+    //Atributos de la tabla
+    public $proveedor_id;
+    public $ruc;
+    public $nombre;
+    public $direccion;
+    public $correo;
+    public $telefono;
+    public $deuda;
+
+    // Reglas (rules): Aquí establecemos las reglas de validación para las propiedades de un componente.
+    protected $rules = [
+        'ruc'       => 'required|numeric',
+        'nombre'    => 'required|string',
+        'direccion' => 'required',
+        'correo'    => 'required|email',
+        'telefono'  => 'required|min:10',
+        'deuda'     => 'required'
+    ];
 
     public function render()
     {
@@ -46,8 +58,10 @@ class ProveedorController extends Component
 
     public function agregar()
     {
-        validacion();
+        //Llamomos a la propiedas de validacion que se encuentra en $rules
+        $this->validate();
 
+        //Ejecutamos la creacion del nuevo proveedor
         Proveedor::create([
             'ruc'       => $this->ruc,
             'nombre'    => $this->nombre,
@@ -62,34 +76,28 @@ class ProveedorController extends Component
 
     public function actualizar()
     {
-        validacion();
+        //Llamomos a la propiedas de validacion que se encuentra en $rules
+        $this->validate();
 
-        if($this->proveedor_id)
-        {
-            $proveedor = Proveedor::find($this->proveedor_id);
+        //Verificamos que existe
+        $proveedor = Proveedor::find($this->proveedor_id);
 
-            $proveedor->update([
-                'ruc'       => $this->ruc,
-                'nombre'    => $this->nombre,
-                'direccion' => $this->direccion,
-                'correo'    => $this->correo,
-                'telefono'  => $this->telefono,
-                'deuda'     => $this->deuda
-            ]);
-        }
+        //Actualizamos
+        $proveedor->update([
+            'ruc'       => $this->ruc,
+            'nombre'    => $this->nombre,
+            'direccion' => $this->direccion,
+            'correo'    => $this->correo,
+            'telefono'  => $this->telefono,
+            'deuda'     => $this->deuda
+        ]);
 
-        //limpiamos las cagas del contenido
-        $this->limpiarContenido();
-    }
+        $this->accion = 1;
 
-    public function eliminar($id)
-    {
-        Proveedor::destroy($id);
     }
 
     public function editar($id)
     {
-        $this->accion = 3;
 
         //buscamos el proveedor en la base de datos
         $proveedor = Proveedor::find($id);
@@ -102,31 +110,39 @@ class ProveedorController extends Component
         $this->telefono     = $proveedor->telefono;
         $this->deuda        = $proveedor->deuda;
 
+        $this->accion = 3;
+    }
+
+    public function eliminar($id)
+    {
+        Proveedor::destroy($id);
+    }
+
+    public function nuevoProveedor()
+    {
+        //Limpiamos los inputs
+        $this->limpiar();
+        //Mostramos el formulario de agregar Proveedor
+        $this->accion = 2;
+    }
+
+    public function cancelar()
+    {
+        //limpiamos los inputs
+        $this->limpiar();
+        //Mostramos la lista de proveedores
         $this->accion = 1;
     }
 
-    public function validacion()
+    public function limpiar()
     {
-        $this->validate([
-            'ruc'       => 'required | min:5',
-            'nombre'    => 'required | min:5',
-            'direccion' => 'required | min:5',
-            'correo'    => 'required | min:5',
-            'telefono'  => 'required | min:5',
-            'deuda'     => 'required | numeric'
-        ]);
-    }
-
-    public function limpiarContenido()
-    {
-        $this->validate([
-            $this->ruc       = '',
-            $this->nombre    = '',
-            $this->direccion = '',
-            $this->correo    = '',
-            $this->telefono  = '',
-            $this->deuda     = ''
-        ]);
+        $this->proveedor_id = '';
+        $this->ruc          = '';
+        $this->nombre       = '';
+        $this->direccion    = '';
+        $this->correo       = '';
+        $this->telefono     = '';
+        $this->deuda        = '';
     }
 }
 

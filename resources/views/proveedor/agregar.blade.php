@@ -1,4 +1,4 @@
-<div class="card card-primary">
+<div class="card card-info">
 
     <div class="card-header">
         <h3 class="card-title">Nuevo Proveedor</h3>
@@ -9,8 +9,8 @@
     </div>
 
     <div class="card-footer">
-        <button type="submit" wire:click='store' class="btn btn-primary">Guardar</button>
-        <a href="/proveedores" class="btn btn-danger">Cancelar</a>
+        <button type="submit" wire:click='agregar' class="btn btn-info">Guardar</button>
+        <button wire:click='cancelar' class="btn btn-default float-right">Cancelar</button>
     </div>
 
 </div>

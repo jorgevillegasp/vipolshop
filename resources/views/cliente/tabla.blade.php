@@ -3,7 +3,7 @@
         <h3 class="text-center">LISTADO DE CLIENTES</h3>
         <div class="container">
             <div class="row justify-content-center">
-                <button wire:click='agregar()' class="btn btn-primary mx-1">Agregar Cliente</button>
+                <button wire:click='agregar()'  onclick="vista('agregar')" class="btn btn-primary mx-1">Agregar Cliente</button>
                 <a href="/clientes/reporte-pdf" target="_blank" class="btn btn-info">Reporte</a>
             </div>
         </div>

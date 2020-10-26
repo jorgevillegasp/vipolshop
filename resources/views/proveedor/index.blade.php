@@ -1,7 +1,6 @@
 {{-- Le indicamos el titulo  --}}
 @section('title', 'Proveedores')
 
-
 {{--------------------------------------------------------------
   | Activadores de vistas.
   | por defecto se muestra el listado de proveedores
@@ -20,3 +19,4 @@
     @include('proveedor.editar')
 
 @endif
+

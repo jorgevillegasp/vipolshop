@@ -5,7 +5,7 @@
             <h3 class="text-center">LISTADO DE PROVEEDORES</h3>
             <div class="container">
                 <div class="row justify-content-center">
-                    <button wire:click='' class="btn btn-primary mx-1">Nuevo</button>
+                    <button wire:click='nuevoProveedor' class="btn btn-primary mx-1">Nuevo</button>
                     <button wire:click='reporte' target="_blank" class="btn btn-info">Reporte</button>
                 </div>
             </div>

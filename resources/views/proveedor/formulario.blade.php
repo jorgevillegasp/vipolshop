@@ -1,12 +1,12 @@
 <form role="form">
     <div class="card-body">
         <div class="row">
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
                 <label for="exampleInputEmail1">RUC</label>
                 <input type="text" class="form-control" id="documento" wire:model='ruc'>
                 @error('ruc') {{ $message }} @enderror
             </div>
-            <div class="form-group col-md-10">
+            <div class="form-group col-md-8">
                 <label for="exampleInputEmail1">Nombre</label>
                 <input type="text" class="form-control" id="nombre" wire:model='nombre'>
                 @error('nombre') {{ $message }} @enderror
