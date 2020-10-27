@@ -33,18 +33,25 @@ class ClienteController extends Component
      */
     public  $accion = 1;
 
+    //Atributos de la tabla
+    public $cliente_id;
+    public $sexo_id;
+    public $cedula;
+    public $nombre_primero;
+    public $nombre_segundo;
+    public $apellido_paterno;
+    public $apellido_materno;
+    public $direccion;
+    public $correo;
+    public $telefono;
+    public $fecha_nacimiento;
+
+
     public function render()
     {
         return view('cliente.index', [
             'clientes' => Cliente::paginate(8)
         ]);
-    }
-
-    public function agregar()
-    {
-        //activamos el formulario de agregar
-        $this->accion = 2;
-
     }
 
     public function editar()
@@ -58,44 +65,18 @@ class ClienteController extends Component
         Cliente::destroy($id);
     }
 
-    public function show()
+    public function limpiar()
     {
-        $this->accion = 1;
-    }
-
-
-
-    public $name;
-    public $email;
-
-    protected $rules = [
-        'name' => 'required|min:6',
-        'email' => 'required|email',
-    ];
-
-    public function submit()
-    {
-        $this->validate();
-
-        // Execution doesn't reach here if validation fails.
-
-        Contact::create([
-            'name' => $this->name,
-            'email' => $this->email,
-        ]);
-    }
-
-
-    use WithFileUploads;
-
-    public $photo;
-
-    public function save()
-    {
-        $this->validate([
-            'photo' => 'image|max:1024', // 1MB Max
-        ]);
-
-        $this->photo->store('photos');
+        $this->cliente_id       = '';
+        $this->sexo_id          = '';
+        $this->cedula           = '';
+        $this->nombre_primero   = '';
+        $this->nombre_segundo   = '';
+        $this->apellido_paterno = '';
+        $this->apellido_materno = '';
+        $this->direccion        = '';
+        $this->correo           = '';
+        $this->telefono         = '';
+        $this->fecha_nacimiento = '';
     }
 }

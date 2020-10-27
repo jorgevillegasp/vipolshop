@@ -28,6 +28,7 @@
 @section('js')
 
 <script>
+
     vista('tabla');
 
     function vista(elemento)
@@ -44,14 +45,13 @@
             ocultar('agregar');
             ocultar('tabla');
         }
-        else
+        else if(elemento == 'tabla')
         {
             mostrar('tabla');
             ocultar('agregar');
             ocultar('editar');
         }
     }
-
 
     function ocultar(elemento){
         document.getElementById(elemento).style.display = 'none';

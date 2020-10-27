@@ -10,7 +10,7 @@
 
     <div class="card-footer">
         <button type="submit" wire:click='agregar' class="btn btn-info">Guardar</button>
-        <button wire:click='cancelar' class="btn btn-default float-right">Cancelar</button>
+        <button wire:click='limpiar' onclick="vista('tabla')" class="btn btn-default float-right">Cancelar</button>
     </div>
 
 </div>
