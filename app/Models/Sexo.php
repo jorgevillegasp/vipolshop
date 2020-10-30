@@ -11,6 +11,18 @@ class Sexo extends Model
 
     public $timestamps = false;
 
+    public $table = 'sexos';
+
+    /**
+     * Los atributos que son asignables en masa.
+     *
+     * @var array
+     *
+     * https://laravel.com/docs/8.x/eloquent#mass-assignment
+     */
+    protected $fillable = [ 'sexo' ];
+
+
     /**
      * La tabla sexo tiene muchos clientes
      */

@@ -2,12 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Sexo;
+use App\Models\Venta;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Cliente extends Model
 {
     use HasFactory;
+
+    public $table = 'clientes';
 
     /**
      * Los atributos que son asignables en masa.
@@ -17,7 +21,6 @@ class Cliente extends Model
      * https://laravel.com/docs/8.x/eloquent#mass-assignment
      */
     protected $fillable = [
-        'cliente_id',
         'sexo_id',
         'cedula',
         'nombre_primero',
@@ -27,7 +30,8 @@ class Cliente extends Model
         'direccion',
         'correo',
         'telefono',
-        'fecha_nacimiento'
+        'fecha_nacimiento',
+        'deuda'
     ];
 
     /**
@@ -41,9 +45,10 @@ class Cliente extends Model
     /**
      * La tabla Clientes pertenece a un sexo
      */
-    public function sexo()
+
+    public function sex()
     {
-        return $this->belongsTo(Sexo::class);
+        return $this->belongsTo('App\Models\Sexo');
     }
 
 }

@@ -3,10 +3,9 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Http\Middleware;
 use Livewire\WithPagination;
-use Livewire\WithFileUploads;
 use App\Models\Cliente;
+use App\Models\Sexo;
 
 class ClienteController extends Component
 {
@@ -45,13 +44,68 @@ class ClienteController extends Component
     public $correo;
     public $telefono;
     public $fecha_nacimiento;
+    public $deuda;
+
+    //almacenar los datos de la tabla anidada
+    public $sexos; 
+
+    public $paginacion = 10;
 
 
     public function render()
     {
-        return view('cliente.index', [
-            'clientes' => Cliente::paginate(8)
+        $this->sexos = Sexo::all();
+        $info = Cliente::leftjoin('sexos as s','s.id', 'clientes.sexo_id')
+                        ->select('clientes.*','s.sexo as sexo')
+                        ->orderBy('clientes.id','desc')
+                        ->paginate($this->paginacion);
+
+        return view('livewire.cliente.index', [
+            'clientes' => $info
         ]);
+    }
+
+    public function create()
+    {
+        $this->accion = 2;
+    }
+
+    // Reglas (rules): Aquí establecemos las reglas de validación para las propiedades de un componente.
+    protected $rules = [
+        'sexo_id'           => 'required',
+        'cedula'            => 'required|numeric|min:8',
+        'nombre_primero'    => 'required|string',
+        'nombre_segundo'    => 'required|string',
+        'apellido_paterno'  => 'required|string',
+        'apellido_materno'  => 'required|string',
+        'direccion'         => 'required|string',
+        'correo'            => 'required|email',
+        'telefono'          => 'required|numeric',
+        'fecha_nacimiento'  => 'required|string',
+        'deuda'             => 'required|numeric',
+    ];
+
+    public function store()
+    {
+        //Llamomos a la propiedas de validacion que se encuentra en $rules
+        $this->validate();
+
+        $cliente =  Cliente::create([
+            'sexo_id'          => $this->sexo_id,            
+            'cedula'           => $this->cedula,         
+            'nombre_primero'   => $this->nombre_primero,
+            'nombre_segundo'   => $this->nombre_segundo, 
+            'apellido_paterno' => $this->apellido_paterno,
+            'apellido_materno' => $this->apellido_materno,
+            'direccion'        => $this->direccion,
+            'correo'           => $this->correo,
+            'telefono'         => $this->telefono,
+            'fecha_nacimiento' => $this->fecha_nacimiento,
+            'deuda'            => $this->deuda,   
+        ]);
+
+        $this->resetInput();
+        $this->accion = 1;
     }
 
     public function editar()
@@ -60,12 +114,18 @@ class ClienteController extends Component
         $this->accion = 3;
     }
 
-    public function eliminar($id)
+    public function destroy($id)
     {
         Cliente::destroy($id);
     }
 
-    public function limpiar()
+    public function cancelar()
+    {        
+        $this->resetInput();
+        $this->accion = 1;
+    }
+
+    public function resetInput()
     {
         $this->cliente_id       = '';
         $this->sexo_id          = '';
@@ -78,5 +138,6 @@ class ClienteController extends Component
         $this->correo           = '';
         $this->telefono         = '';
         $this->fecha_nacimiento = '';
+        $this->deuda            = '';
     }
 }

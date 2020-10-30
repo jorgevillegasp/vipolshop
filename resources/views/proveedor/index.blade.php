@@ -19,4 +19,3 @@
     @include('proveedor.editar')
 
 @endif
-

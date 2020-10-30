@@ -12,6 +12,15 @@ class FormaDePago extends Model
     public $timestamps = false;
 
     /**
+     * Los atributos que son asignables en masa.
+     *
+     * @var array
+     *
+     * https://laravel.com/docs/8.x/eloquent#mass-assignment
+     */
+    public $fillable = ['pago'];
+
+    /**
      * Indicamos que esta tabla forma_de_pagos tiene muchas ventas
      */
     public function compras()

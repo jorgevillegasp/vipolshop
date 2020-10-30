@@ -36,10 +36,10 @@
                                             <td>{{ $proveedor->telefono }}</td>
                                             <td>{{ $proveedor->deuda }}</td>
                                             <td>
-                                                <button wire:click='editar({{ $proveedor->id }})' type="button" class="btn btn-info btn-sm">
+                                                <button wire:click='editar({{ $proveedor->id }})' type="button" class="btn btn-sm text-info">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-alt"></i></button>
+                                                <button type="button" class="btn btn-sm text-danger"><i class="fa fa-trash-alt"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach

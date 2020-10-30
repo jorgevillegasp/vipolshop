@@ -252,17 +252,17 @@ return [
         ['header' => 'Almacen'],
         [
             'text' => 'Productos',
-            'url'  => 'producto',
+            'url'  => 'productos',
             'icon' => 'fas fa-fw fa-tshirt',
         ],
         [
             'text' => 'Compras',
-            'url'  => 'compra',
+            'url'  => 'compras',
             'icon' => 'fas fa-fw fa-cart-arrow-down',
         ],
         [
             'text' => 'Ventas',
-            'url'  => 'venta',
+            'url'  => 'ventas',
             'icon' => 'fas fa-fw fa-shopping-cart',
         ],
         ['header' => 'Administracion'],
@@ -273,13 +273,23 @@ return [
         ],
         [
             'text' => 'Clientes',
-            'url'  => 'cliente',
+            'url'  => 'clientes',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Colores',
+            'url'  => 'colores',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Tallas',
+            'url'  => 'tallas',
             'icon' => 'fas fa-fw fa-user',
         ],
         ['header' => 'Reportes'],
         [
             'text'  =>  'Facturas',
-            'url'   =>  'factura',
+            'url'   =>  'facturas',
             'icon'  =>  'fas fa-fw fa-file',
         ],
     ],
@@ -314,7 +324,7 @@ return [
     | Aquí podemos modificar los complementos utilizados dentro del panel de administración.
     |
     | Para obtener instrucciones más detalladas, puede mirar aquí:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/#91-plugins
+    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/9.-Other-Configuration#91-plugins
     |
     */
 
@@ -345,13 +355,18 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
+                    'asset' => true,
+                    'location' => 'vendor/select2/js/select2.full.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
+                    'asset' => true,
+                    'location' => 'vendor/select2-bootstrap4-theme/select2-bootstrap4.min.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/select2/css/select2.min.css',
                 ],
             ],
         ],
@@ -370,8 +385,23 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                ],
+            ],
+        ],
+        'Toastr' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/toastr/toastr.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/toastr/toastr.min.css',
                 ],
             ],
         ],

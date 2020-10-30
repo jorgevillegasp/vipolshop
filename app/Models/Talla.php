@@ -11,6 +11,15 @@ class Talla extends Model
 
     public $timestamps = false;
 
+    /**
+     * Los atributos que son asignables en masa.
+     *
+     * @var array
+     *
+     * https://laravel.com/docs/8.x/eloquent#mass-assignment
+     */
+     protected $fillable = [ 'talla' ];
+
     public function productos(){
         return  $this->hasMany(Producto::class);
     }
