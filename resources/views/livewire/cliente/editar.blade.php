@@ -10,7 +10,7 @@
 
     <div class="card-footer">
         <button type="submit" wire:click='update' class="btn btn-info">Actualizar</button>
-        <button wire:click='cancelar' class="btn btn-default float-right">Cancelar</button>
+        <button wire:click='doAction(1)' class="btn btn-default float-right">Cancelar</button>
     </div>
 
 </div>

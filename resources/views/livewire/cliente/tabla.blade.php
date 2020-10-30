@@ -43,7 +43,7 @@
                                             <button wire:click='edit({{ $cliente->id }})' class="btn">
                                                 <i class="pe-7s-pen pe-lg  text-info"></i>
                                             </button>
-                                            <button wire:click='destroy({{ $cliente->id }})' class="btn fomrulario-eliminar">
+                                            <button wire:click='destroy({{ $cliente->id }})' class="btn">
                                                 <i class="pe-7s-trash pe-lg  text-danger"></i>
                                             </button>
                                         </td>

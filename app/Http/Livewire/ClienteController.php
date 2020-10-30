@@ -47,7 +47,7 @@ class ClienteController extends Component
     public $deuda;
 
     //almacenar los datos de la tabla anidada
-    public $sexos; 
+    public $sexos;
 
     public $paginacion = 10;
 
@@ -70,48 +70,75 @@ class ClienteController extends Component
         $this->accion = 2;
     }
 
-    // Reglas (rules): Aquí establecemos las reglas de validación para las propiedades de un componente.
-    protected $rules = [
-        'sexo_id'           => 'required',
-        'cedula'            => 'required|numeric|min:8',
-        'nombre_primero'    => 'required|string',
-        'nombre_segundo'    => 'required|string',
-        'apellido_paterno'  => 'required|string',
-        'apellido_materno'  => 'required|string',
-        'direccion'         => 'required|string',
-        'correo'            => 'required|email',
-        'telefono'          => 'required|numeric',
-        'fecha_nacimiento'  => 'required|string',
-        'deuda'             => 'required|numeric',
-    ];
-
     public function store()
     {
         //Llamomos a la propiedas de validacion que se encuentra en $rules
         $this->validate();
 
         $cliente =  Cliente::create([
-            'sexo_id'          => $this->sexo_id,            
-            'cedula'           => $this->cedula,         
+            'sexo_id'          => $this->sexo_id,
+            'cedula'           => $this->cedula,
             'nombre_primero'   => $this->nombre_primero,
-            'nombre_segundo'   => $this->nombre_segundo, 
+            'nombre_segundo'   => $this->nombre_segundo,
             'apellido_paterno' => $this->apellido_paterno,
             'apellido_materno' => $this->apellido_materno,
             'direccion'        => $this->direccion,
             'correo'           => $this->correo,
             'telefono'         => $this->telefono,
             'fecha_nacimiento' => $this->fecha_nacimiento,
-            'deuda'            => $this->deuda,   
+            'deuda'            => $this->deuda,
         ]);
 
         $this->resetInput();
         $this->accion = 1;
     }
 
-    public function editar()
+    public function edit($id)
     {
+
+        $registro = Cliente::findOrFail($id);
+
+        $this->cliente_id       = $registro->id;
+        $this->sexo_id          = $registro->sexo_id;
+        $this->cedula           = $registro->cedula;
+        $this->nombre_primero   = $registro->nombre_primero;
+        $this->nombre_segundo   = $registro->nombre_segundo;
+        $this->apellido_paterno = $registro->apellido_paterno;
+        $this->apellido_materno = $registro->apellido_materno;
+        $this->direccion        = $registro->direccion;
+        $this->correo           = $registro->correo;
+        $this->telefono         = $registro->telefono;
+        $this->fecha_nacimiento = $registro->fecha_nacimiento;
+        $this->deuda            = $registro->deuda;
+
         //activamos el formulario de editar
         $this->accion = 3;
+    }
+
+    public function update()
+    {
+
+        //Llamomos a la propiedas de validacion que se encuentra en $rules
+        $this->validate();
+
+        $registro = Cliente::findOrFail($this->cliente_id);
+
+        $registro->update([
+            'sexo_id'          => $this->sexo_id,
+            'cedula'           => $this->cedula,
+            'nombre_primero'   => $this->nombre_primero,
+            'nombre_segundo'   => $this->nombre_segundo,
+            'apellido_paterno' => $this->apellido_paterno,
+            'apellido_materno' => $this->apellido_materno,
+            'direccion'        => $this->direccion,
+            'correo'           => $this->correo,
+            'telefono'         => $this->telefono,
+            'fecha_nacimiento' => $this->fecha_nacimiento,
+            'deuda'            => $this->deuda,
+        ]);
+
+        $this->resetInput();
+        $this->accion = 1;
     }
 
     public function destroy($id)
@@ -119,10 +146,11 @@ class ClienteController extends Component
         Cliente::destroy($id);
     }
 
-    public function cancelar()
-    {        
+    //activa la vista edición o creación -  se lo usa mas en la accion de cancelar
+    public function doAction($accion)
+    {
         $this->resetInput();
-        $this->accion = 1;
+        $this->accion = $accion;
     }
 
     public function resetInput()
@@ -140,4 +168,19 @@ class ClienteController extends Component
         $this->fecha_nacimiento = '';
         $this->deuda            = '';
     }
+
+    // Reglas (rules): Aquí establecemos las reglas de validación para las propiedades de un componente.
+    protected $rules = [
+        'sexo_id'           => 'required',
+        'cedula'            => 'required|numeric|min:8',
+        'nombre_primero'    => 'required|string',
+        'nombre_segundo'    => 'required|string',
+        'apellido_paterno'  => 'required|string',
+        'apellido_materno'  => 'required|string',
+        'direccion'         => 'required|string',
+        'correo'            => 'required|email',
+        'telefono'          => 'required|numeric',
+        'fecha_nacimiento'  => 'required|string',
+        'deuda'             => 'required|numeric',
+    ];
 }

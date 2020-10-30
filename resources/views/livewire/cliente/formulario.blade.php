@@ -5,18 +5,18 @@
             <div class="form-group col-md-6">
                 <label for="exampleInputEmail1">Cedula</label>
                 <input type="text" class="form-control" name="cedula" wire:model='cedula' id="cedula">
-                @error('cedula') {{ $message }} @enderror
+                @error('cedula') <span class="text-danger">{{ $message }}</span> @enderror
             </div>
 
             <div class="form-group col-md-6">
                 <label >Sexo</label>
                 <select wire:model="sexo_id" class="form-control text-center">
-                    <option value="Elegir" disabled="">Elegir</option>
+                    <option value="Elegir" disabled="">--------- Elige un sexo ---------</option>
                     @foreach($sexos as $sexo)
                         <option value="{{ $sexo->id }}">
                             {{ $sexo->sexo}}
-                        </option>                                       
-                    @endforeach                              
+                        </option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -26,25 +26,25 @@
             <div class="form-group col-md-3">
                 <label for="exampleInputEmail1">Nombre 1</label>
                 <input type="text" class="form-control" name="nombres_primero" wire:model='nombre_primero' id="nombre_primero">
-                    @error('nombre_primero') {{ $message }} @enderror
+                    @error('nombre_primero') <span class="text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group col-md-3">
                 <label for="exampleInputEmail1">Nombre 1</label>
                 <input type="text" class="form-control" name="nombre_segundo" wire:model='nombre_segundo' id="nombre_segundo">
-                    @error('nombre_segundo') {{ $message }} @enderror
+                    @error('nombre_segundo') <span class="text-danger">{{ $message }}</span> @enderror
             </div>
 
-            
+
 
             <div class="form-group col-md-3">
                 <label for="exampleInputEmail1">Apellido Paterno</label>
                 <input type="text" class="form-control" name="apellido_paterno" wire:model='apellido_paterno' id="apellid_paterno">
-                @error('apellido_paterno') {{ $message }} @enderror
+                @error('apellido_paterno') <span class="text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group col-md-3">
                 <label for="exampleInputEmail1">Apellido Materno</label>
                 <input type="text" class="form-control" name="apellido_materno" wire:model='apellido_materno' id="apellido_materno">
-                @error('apellido_materno') {{ $message }} @enderror
+                @error('apellido_materno') <span class="text-danger">{{ $message }}</span> @enderror
             </div>
         </div>
 
@@ -54,12 +54,12 @@
             <div class="form-group col-md-6">
                 <label for="exampleInputEmail1">Fecha de nacimiento</label>
                 <input type="text" class="form-control" name="fecha_nacimiento" wire:model='fecha_nacimiento' id="fecha_nacimiento">
-                @error('fecha_nacimiento') {{ $message }} @enderror
+                @error('fecha_nacimiento') <span class="text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group col-md-6">
                 <label for="exampleInputEmail1">Telefono</label>
                 <input type="text" class="form-control" name="telefono" wire:model='telefono' id="telefono">
-                @error('telefono') {{ $message }} @enderror
+                @error('telefono') <span class="text-danger">{{ $message }}</span> @enderror
             </div>
         </div>
 
@@ -67,36 +67,21 @@
             <div class="form-group col-md-6">
                 <label for="exampleInputEmail1">Correo Electronico</label>
                 <input type="correo" class="form-control" name="correo" wire:model="correo" id="correo">
-                @error('correo') {{ $message }} @enderror
+                @error('correo') <span class="text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group col-md-6">
                 <label for="exampleInputEmail1">Deuda</label>
                 <input type="correo" class="form-control" name="deuda" wire:model="deuda" id="deuda">
-                @error('deuda') {{ $message }} @enderror
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label for="exampleInputEmail1">Direccion</label>
-                <input type="text" class="form-control" name="direccion" wire:model="direccion" id="direccion">
-                @error('direccion') {{ $message }} @enderror
+                @error('deuda') <span class="text-danger">{{ $message }}</span> @enderror
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label>Minimal</label>
-                <select class="form-control select2bs4" style="width: 100%;">
-                  <option selected="selected">Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
-                </select>
-              </div>
+                <label for="exampleInputEmail1">Direccion</label>
+                <input type="text" class="form-control" name="direccion" wire:model="direccion" id="direccion">
+                @error('direccion') <span class="text-danger">{{ $message }}</span> @enderror
+            </div>
         </div>
 
     </div>
