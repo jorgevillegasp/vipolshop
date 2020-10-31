@@ -8,6 +8,7 @@ use App\Http\Livewire\ProveedorController;
 use App\Http\Livewire\TallaController;
 use App\Http\Livewire\FormaDePagoController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Rutas web

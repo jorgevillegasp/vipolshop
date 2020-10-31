@@ -1,6 +1,25 @@
+{{-- Le indicamos el titulo  --}}
+@section('title', 'Productos')
 
-@extends('adminlte::page')
 
+{{--------------------------------------------------------------
+  | Activadores de vistas.
+  | por defecto se fuestra el listado de Productos
+----------------------------------------------------------------}}
+
+{{-- Muestra la tabla del listado de los clientees --}}
+@if ($accion == 1)
+    @include('livewire.producto.tabla')
+
+{{-- muestra el formulario para ingresar un nuevo cliente --}}
+@elseif ($accion == 2)
+    @include('livewire.producto.agregar')
+
+{{-- muestra el formulario para editar los datos del cliente --}}
+@elseif($accion == 3)
+    @include('livewire.producto.editar')
+
+@endif
 
 @section('content')
 <div class="content">

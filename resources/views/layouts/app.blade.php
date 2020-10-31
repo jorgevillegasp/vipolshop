@@ -10,9 +10,13 @@
     <div class="content">
         {{ $slot }}
     </div>
+    @stack('modals')
 @stop
 
 @section('css')
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.9.0/sweetalert2.css" integrity="sha512-oPUexEWow5feo+ZOnTalpT5rXLhHMgZ9dXUa/Qb9PGvV+jIX4mMwZXvO/pg0XP45DFlciz4J/b4O8hXbF6UJeA==" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="/css/admin_custom.css">
     @livewireStyles
 
@@ -46,6 +50,8 @@
 
 @section('js')
     <script src="js/miDataTable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.9.0/sweetalert2.all.min.js" integrity="sha512-To1xyyzaP8c5utaEsZhoE4xR6XOUBaQaGrAmN0dpGw5y+deKFjE2NOC+/Xge0rCL0EYXsC0e/PPD35WqHVW8PQ==" crossorigin="anonymous"></script>
+
 
     @livewireScripts
 
