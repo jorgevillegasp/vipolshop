@@ -13,7 +13,6 @@ use App\Models\Cliente;
 use App\Models\CompraDetalle;
 use App\Models\Producto;
 use App\Models\Proveedor;
-use App\Models\FormaDePago;
 use App\Models\VentaDetalle;
 use App\Models\ProductoDetalle;
 use App\Models\ProductoDetalleTalla;
@@ -49,9 +48,6 @@ class DatabaseSeeder extends Seeder
         ProductoDetalle::factory(30)->create();
 
         ProductoDetalleTalla::factory(50)->create();
-
-        FormaDePago::factory()->create(['pago' => 'contado']);
-        FormaDePago::factory()->create(['pago' => 'credito']);
 
         Proveedor::factory(10)->create();
 

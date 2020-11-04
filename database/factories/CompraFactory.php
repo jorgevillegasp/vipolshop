@@ -23,7 +23,6 @@ class CompraFactory extends Factory
     {
         return [
             'proveedor_id'      =>  rand(1,10),
-            'forma_de_pago_id'  =>  rand(1,2),
             'fecha_compra'      =>  $this->faker->dateTime,
             'costo_compra'      =>  rand(1,50),
             'iva'               =>  rand(1,5)

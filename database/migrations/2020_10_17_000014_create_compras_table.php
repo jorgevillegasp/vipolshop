@@ -21,7 +21,6 @@ class CreateComprasTable extends Migration
             $table->bigIncrements('id');
 
             $table->bigInteger('proveedor_id')->unsigned()->nullable();
-            $table->bigInteger('forma_de_pago_id')->unsigned()->nullable();
 
             $table->dateTime('fecha_compra');
             $table->decimal('costo_compra',4,2);
@@ -33,10 +32,6 @@ class CreateComprasTable extends Migration
             /*****************************************************************************
              * Declaración de las Claves segundarías que referencia a otra tabla
              ****************************************************************************/
-            //referencia a la tabla
-            $table->foreign('forma_de_pago_id')->references('id')->on('forma_de_pagos')
-                ->onDelete('set null')
-                ->onUpdate('cascade');
 
             $table->foreign('proveedor_id')->references('id')->on('proveedores')
                 ->onDelete('set null')

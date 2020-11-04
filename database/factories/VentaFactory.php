@@ -24,7 +24,6 @@ class VentaFactory extends Factory
         return [
             'venta_detalle_id'  =>  rand(1,500),
             'cliente_id'        =>  rand(1,75),
-            'forma_de_pago_id'  =>  rand(1,2),
             'fecha_venta'       =>  $this->faker->dateTime,
             'iva'               =>  rand(12,12),
             'subtotal'          =>  rand(20,50),
