@@ -22,7 +22,7 @@ class VentaDetalleFactory extends Factory
     public function definition()
     {
         return [
-            'producto_id'       =>  rand(1,200),
+            'producto_id'       =>  rand(1,20),
             'venta_id'          =>  rand(1,50),
             'cantidad'          =>  rand(1,50),
             'costo_unidad'      =>  rand(1,50),

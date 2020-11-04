@@ -1,5 +1,6 @@
 <form role="form">
     {{ csrf_field() }}
+    
     <div class="card-body">
         <div class="row">
             <div class="form-group col-md-12">

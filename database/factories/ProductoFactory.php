@@ -22,12 +22,10 @@ class ProductoFactory extends Factory
     public function definition()
     {
         return [
-            'talla_id'      =>  rand(1,4),
-            'color_id'      =>  rand(1,10),
+            'categoria_id'  =>  rand(1,2),
             'nombre'        =>  $this->faker->tld,
-            'precio_venta'  =>  rand(12,50),
-            'imagen'        =>  $this->faker->imageUrl($width = 640, $height = 480),
             'stock'         =>  rand(1,100),
+            'estado'        =>  boolean,
         ];
     }
 }

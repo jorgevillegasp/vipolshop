@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Sexo;
+use App\Models\Cliente;
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\Cliente;
-use App\Models\Sexo;
 
 class ClienteController extends Component
 {
@@ -65,14 +65,9 @@ class ClienteController extends Component
         ]);
     }
 
-    public function create()
-    {
-        $this->accion = 2;
-    }
-
     public function store()
     {
-        //Llamomos a la propiedas de validacion que se encuentra en $rules
+        //Validamos los datos llamando a la propiedades se encuentra en $rules
         $this->validate();
 
         $cliente =  Cliente::create([
@@ -118,7 +113,7 @@ class ClienteController extends Component
     public function update()
     {
 
-        //Llamomos a la propiedas de validacion que se encuentra en $rules
+        //Validamos los datos llamando a la propiedades se encuentra en $rules
         $this->validate();
 
         $registro = Cliente::findOrFail($this->cliente_id);

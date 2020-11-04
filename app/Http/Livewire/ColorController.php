@@ -28,6 +28,7 @@ class ColorController extends Component
     //Atributos de la tabla
     public $color_id;
     public $color;
+
     public function render()
     {
         $datos = Color::orderBy('id','desc')->paginate(8);
@@ -40,6 +41,7 @@ class ColorController extends Component
         $this->validate([
             'color' => 'required'
         ]);
+
         //valida si existe otro color con el mismo nombre
         $existe = Color::where('color', $this->color)
             ->where('id', '<>', $this->color_id)
@@ -54,6 +56,7 @@ class ColorController extends Component
         else
         {
             Color::create(['color'=> $this->color]);
+            session()->flash('mensaje', 'Se creo el color '. $this->color .' con exito');
             $this->resetInput();
         }
 
@@ -84,12 +87,13 @@ class ColorController extends Component
 
         if( $existe->count() > 0) {
             //imprimir mensaje de error
-            session()->flash('msg-error', 'El color ya existe');
+            session()->flash('mensaje-error', 'El color ya existe');
             $this->resetInput();
             return;
         }
         //actualizamos los cambios
         $color->update(['color'=> $this->color]);
+        session()->flash('mensaje', 'Se actualizo  el color '.$this->color.' con exito');
 
 
         //limpiamos los inputs
@@ -102,6 +106,7 @@ class ColorController extends Component
     public function destroy($id)
     {
         Color::destroy($id);
+        session()->flash('mensaje', 'Se elimino con exito');
     }
 
     public function resetInput()

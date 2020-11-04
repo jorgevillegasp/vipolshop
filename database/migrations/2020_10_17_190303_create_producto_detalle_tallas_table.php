@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductosTable extends Migration
+class CreateProductoDetalleTallasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,26 +13,22 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
-
+        Schema::create('producto_detalle_tallas', function (Blueprint $table) {
             /**************************************************
              * Campos de la tabla
              ***************************************************/
-
             $table->bigIncrements('id');
-
-            $table->bigInteger('categoria_id')->unsigned()->nullable();
-
-            $table->string('nombre', 45);
-            $table->integer('stock');
-            $table->boolen('estado');
-            $table->timestamps();       
+            $table->bigInteger('talla_id')->unsigned()->nullable();
+            $table->bigInteger('producto_detalle_id')->unsigned()->nullable();
 
             /*****************************************************************************
              * Declaración de las Claves segundarías que referencia a otra tabla
              ****************************************************************************/
+            $table->foreign('talla_id')->references('id')->on('tallas')
+                ->onDelete('set null')
+                ->onUpdate('cascade');
 
-             $table->foreign('categoria_id')->references('id')->on('categorias')
+            $table->foreign('producto_detalle_id')->references('id')->on('producto_detalle')
                 ->onDelete('set null')
                 ->onUpdate('cascade');
 
@@ -46,6 +42,6 @@ class CreateProductosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productos');
+        Schema::dropIfExists('producto_detalle_tallas');
     }
 }

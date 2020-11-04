@@ -2,8 +2,12 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Color;
+use App\Models\Talla;
 use Livewire\Component;
+use App\Models\Producto;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
 
 class ProductoController extends Component
 {
@@ -15,40 +19,97 @@ class ProductoController extends Component
     */
     use WithPagination;
 
+    use WithFileUploads;
+
     //Indicamos que vamos a usar el tema de bootstrap en la paginación
     protected $paginationTheme = 'bootstrap';
 
-    //titulo de la pagina
-    public $titulo = 'Cliente';
 
     /**
-     * $acción es la acción que se esta realizando en ese momento donde:
+     * $action es la acción que se esta realizando en ese momento donde:
      *
-     * 1 = activa la tabla del listado de clientes.
+     * 1 = activa la tabla de los registros.
      * 2 = activa el formulario de ingreso.
      * 3 = activa el formulario de edición.
      */
-    public  $accion = 1;
+    public  $action = 1;
 
     //Atributos de la tabla
-    public $cliente_id;
-    public $sexo_id;
-    public $cedula;
-    public $nombre_primero;
-    public $nombre_segundo;
-    public $apellido_paterno;
-    public $apellido_materno;
-    public $direccion;
-    public $correo;
-    public $telefono;
-    public $fecha_nacimiento;
-    public $deuda;
+    public $producto_id;
+    public $color_id;
+    public $talla_id;
+    public $nombre;
+    public $imagen;
+    public $precio_venta;
+    public $stock;
 
     //almacenar los datos de la tabla anidada
-    public $sexos;
+    public $colores;
+    public $tallas;
+
+    //paginacion de las tablas
+    public $pagination = 10;
+
+
+
     public function render()
     {
+        $this->tallas = Talla::all();
+        $this->colores = Color::all();
+        $record = Producto::leftjoin('tallas','tallas.id','productos.talla_id')
+                        ->leftjoin('colores','colores.id','productos.color_id')
+                        ->select('productos.*','tallas.talla','colores.color')
+                        ->orderBy('productos.id','desc')
+                        ->paginate($this->pagination);
 
-        return view('livewire.producto.index');
+        return view('livewire.producto.index',['productos' => $record]);
     }
+
+    public function store()
+    {
+        //Validamos los datos llamando a la propiedades se encuentra en $rules
+        $this->validate();
+
+        $producto =  Producto::create([
+            'color_id'     => $this->color_id,
+            'talla_id'     => $this->talla_id,
+            'nombre'       => $this->nombre,
+            'precio_venta' => $this->precio_venta,
+            'imagen'       => $this->imagen,
+            'stock'        => $this->stock
+        ]);
+
+        $this->resetInput();
+        $this->action = 1;
+
+    }
+
+    public function doAction($action)
+    {
+        $this->action = $action;
+        $this->resetInput();
+    }
+
+    public function resetInput()
+    {
+        $this->nombre = '';
+        $this->imagen = '';
+        $this->nombre = '';
+        $this->stock  = '';
+        $this->color  = '';
+        $this->talla  = '';
+        $this->precio_venta = '';
+    }
+
+    // Reglas (rules): Aquí establecemos las reglas de validación para las propiedades de un componente.
+    protected $rules = [
+        'color_id'     => 'required|numeric',
+        'talla_id'     => 'required|numeric',
+        'nombre'       => 'required|string',
+        'precio_venta' => 'required|numeric',
+        'imagen'       => 'image|max:1024', // 1MB Max
+        'stock'        => 'required|numeric'
+    ];
+
+
 }

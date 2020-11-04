@@ -268,7 +268,7 @@ return [
         ['header' => 'Administracion'],
         [
             'text' => 'Proveedores',
-            'url'  => 'proveedor',
+            'url'  => 'proveedorES',
             'icon' => 'fas fa-fw fa-hands-helping',
         ],
         [

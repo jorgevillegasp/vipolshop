@@ -2,18 +2,49 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Color;
+use App\Models\Talla;
+use App\Models\VentaDetalle;
+use App\Models\CompraDetalle;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Producto extends Model
 {
     use HasFactory;
 
+
+    public $table = 'productos';
+
+    /**
+     * Los atributos que son asignables en masa.
+     *
+     * @var array
+     *
+     * https://laravel.com/docs/8.x/eloquent#mass-assignment
+     */
+    protected $fillable = [
+        'talla_id',
+        'color_id',
+        'nombre',
+        'precio_venta',
+        'imagen',
+        'stock'
+    ];
+
+
     /**
      * Indicamos que este producto tiene muchas detalles de compra
      */
     public function compra_detalles(){
-        return  $this->hasMany(Producto::class);
+        return  $this->hasMany(CompraDetalle::class);
+    }
+
+    /**
+     * Indicamos que este producto tiene muchas detalles de ventas
+     */
+    public function venta_detalles(){
+        return  $this->hasMany(VentaDetalle::class);
     }
 
     /**

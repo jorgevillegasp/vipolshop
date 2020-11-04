@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductosTable extends Migration
+class CreateProductoDetallesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,29 +13,26 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
-
-            /**************************************************
-             * Campos de la tabla
-             ***************************************************/
-
+        Schema::create('producto_detalles', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->bigInteger('categoria_id')->unsigned()->nullable();
+            $table->bigInteger('producto_id')->unsigned()->nullable();
+            $table->bigInteger('color_id')->unsigned()->nullable();
 
-            $table->string('nombre', 45);
+            $table->binary('imagen')->nullable();
+            $table->decimal('precio_venta',3,2);
             $table->integer('stock');
-            $table->boolen('estado');
-            $table->timestamps();       
-
+            $table->timestamps();
             /*****************************************************************************
              * Declaración de las Claves segundarías que referencia a otra tabla
              ****************************************************************************/
-
-             $table->foreign('categoria_id')->references('id')->on('categorias')
+            $table->foreign('producto_id')->references('id')->on('productos')
                 ->onDelete('set null')
                 ->onUpdate('cascade');
 
+            $table->foreign('color_id')->references('id')->on('colores')
+                ->onDelete('set null')
+                ->onUpdate('cascade');
         });
     }
 
@@ -46,6 +43,6 @@ class CreateProductosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productos');
+        Schema::dropIfExists('producto_detalles');
     }
 }

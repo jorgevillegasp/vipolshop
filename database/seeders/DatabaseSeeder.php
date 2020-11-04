@@ -13,7 +13,8 @@ use App\Models\Producto;
 use App\Models\Proveedor;
 use App\Models\FormaDePago;
 use App\Models\VentaDetalle;
-use App\Models\CompraDetalle;
+use App\Models\ProductoDetalle;
+use App\Models\ProductoDetalleTalla;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -37,12 +38,22 @@ class DatabaseSeeder extends Seeder
         Talla::factory()->create(['talla' => 'large']);
         Talla::factory()->create(['talla' => 'extra large']);
 
+        ProductoDetalle::factory(30)->create();
+        ProductoDetalleTalla::factory(50)->create();
+
         FormaDePago::factory()->create(['pago' => 'contado']);
         FormaDePago::factory()->create(['pago' => 'credito']);
 
         Proveedor::factory(10)->create();
 
-        Producto::factory(200)->create();
+        FormaDePago::factory()->create(['categoria'     => 'Pantalones',
+                                        'descripcion'   => 'descripcion de la categoria 0001' ,
+                                        'estado'        => true,]);
+        FormaDePago::factory()->create(['categoria'     => 'Bluzas',
+                                        'descripcion'   => 'descripcion de la categoria 0002' ,
+                                        'estado'        => true,]);
+
+        Producto::factory(20)->create();
 
         Cliente::factory(75)->create();
 
@@ -50,6 +61,15 @@ class DatabaseSeeder extends Seeder
         VentaDetalle::factory(500)->create();
 
         Compra::factory(100)->create();
-        CompraDetalle::factory(100)->create();
+
+        
+
+        
+
+        
+
+        
+
+
     }
 }

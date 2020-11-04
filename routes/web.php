@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\ColorController;
 use App\Http\Livewire\ClienteController;
 use App\Http\Livewire\ProveedorController;
+use App\Http\Livewire\ProductoController;
 use App\Http\Livewire\TallaController;
 use App\Http\Livewire\FormaDePagoController;
 
@@ -25,7 +26,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('clientes');
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
@@ -39,6 +40,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/proveedores', ProveedorController::Class);
 
     Route::get('/clientes', ClienteController::Class);
+
+    Route::get('/productos', ProductoController::Class);
 
 
 });
