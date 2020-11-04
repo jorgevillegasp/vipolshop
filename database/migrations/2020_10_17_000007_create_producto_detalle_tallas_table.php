@@ -28,7 +28,7 @@ class CreateProductoDetalleTallasTable extends Migration
                 ->onDelete('set null')
                 ->onUpdate('cascade');
 
-            $table->foreign('producto_detalle_id')->references('id')->on('producto_detalle')
+            $table->foreign('producto_detalle_id')->references('id')->on('producto_detalles')
                 ->onDelete('set null')
                 ->onUpdate('cascade');
 

@@ -25,7 +25,7 @@ class CreateProductosTable extends Migration
 
             $table->string('nombre', 45);
             $table->integer('stock');
-            $table->boolen('estado');
+            $table->boolean('estado');
             $table->timestamps();       
 
             /*****************************************************************************
