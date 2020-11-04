@@ -25,7 +25,7 @@ class ProductoFactory extends Factory
             'categoria_id'  =>  rand(1,2),
             'nombre'        =>  $this->faker->tld,
             'stock'         =>  rand(1,100),
-            'estado'        =>  boolean,
+            'estado'        =>  true,
         ];
     }
 }

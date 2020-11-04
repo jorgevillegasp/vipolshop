@@ -20,7 +20,7 @@ class CreateProductoDetallesTable extends Migration
             $table->bigInteger('color_id')->unsigned()->nullable();
 
             $table->binary('imagen')->nullable();
-            $table->decimal('precio_venta',3,2);
+            $table->decimal('precio_venta',5,2);
             $table->integer('stock');
             $table->timestamps();
             /*****************************************************************************

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Categoria;
 use App\Models\Sexo;
 use App\Models\User;
 use App\Models\Color;
@@ -9,6 +10,7 @@ use App\Models\Talla;
 use App\Models\Venta;
 use App\Models\Compra;
 use App\Models\Cliente;
+use App\Models\CompraDetalle;
 use App\Models\Producto;
 use App\Models\Proveedor;
 use App\Models\FormaDePago;
@@ -28,10 +30,16 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
 
-        Sexo::factory()->create(['sexo' => 'Masculino']);
-        Sexo::factory()->create(['sexo' => 'Femenino']);
+        Categoria::factory()->create(['categoria'   => 'Pantalones',
+                                    'descripcion'   => 'descripcion de la categoria 0001' ,
+                                    'estado'        => true,]);
+        Categoria::factory()->create(['categoria'   => 'Bluzas',
+                                    'descripcion'   => 'descripcion de la categoria 0002' ,
+                                    'estado'        => true,]);
 
         Color::factory(10)->create();
+
+        Producto::factory(20)->create();
 
         Talla::factory()->create(['talla' => 'small']);
         Talla::factory()->create(['talla' => 'medium']);
@@ -39,6 +47,7 @@ class DatabaseSeeder extends Seeder
         Talla::factory()->create(['talla' => 'extra large']);
 
         ProductoDetalle::factory(30)->create();
+
         ProductoDetalleTalla::factory(50)->create();
 
         FormaDePago::factory()->create(['pago' => 'contado']);
@@ -46,30 +55,17 @@ class DatabaseSeeder extends Seeder
 
         Proveedor::factory(10)->create();
 
-        FormaDePago::factory()->create(['categoria'     => 'Pantalones',
-                                        'descripcion'   => 'descripcion de la categoria 0001' ,
-                                        'estado'        => true,]);
-        FormaDePago::factory()->create(['categoria'     => 'Bluzas',
-                                        'descripcion'   => 'descripcion de la categoria 0002' ,
-                                        'estado'        => true,]);
-
-        Producto::factory(20)->create();
+        Sexo::factory()->create(['sexo' => 'Masculino']);
+        Sexo::factory()->create(['sexo' => 'Femenino']);
 
         Cliente::factory(75)->create();
 
         Venta::factory(50)->create();
+
         VentaDetalle::factory(500)->create();
 
         Compra::factory(100)->create();
 
-        
-
-        
-
-        
-
-        
-
-
+        CompraDetalle::factory(30)->create();
     }
 }
