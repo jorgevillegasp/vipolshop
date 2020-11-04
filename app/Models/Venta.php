@@ -9,6 +9,18 @@ class Venta extends Model
 {
     use HasFactory;
 
+    public $table = 'ventas';
+
+    protected $fillable = [
+        'venta○detalle_id',
+        'cliente_id',
+        'fecha_venta',
+        'iva',
+        'subtotal',
+        'total',
+        'ganancia'
+    ];
+
     /**
      * Le indicamos que la tabla Ventas tiene Muchos detalles 
      */

@@ -2,15 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Proveedor;
+use App\Models\CompraDetalle;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Compra extends Model
 {
     use HasFactory;
 
+    public $table = 'compras';
+
+    protected $fillable = [
+        'proveedor_id',
+        'fecha_compra',
+        'costo_compra',
+        'iva'
+    ];
+
     /**
-     * Le indicamos que la Ventas tiene Muchos detalles 
+     * Le indicamos que la Ventas tiene Muchos detalles
      */
     public function compra_detalles()
     {

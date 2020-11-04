@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\ProductoDetalleTalla;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Talla extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
+
+    public $table = 'tallas';
 
     /**
      * Los atributos que son asignables en masa.
@@ -18,14 +21,10 @@ class Talla extends Model
      *
      * https://laravel.com/docs/8.x/eloquent#mass-assignment
      */
-     protected $fillable = [ 'talla' ];
+    protected $fillable = [ 'talla' ];
 
-    public function productos(){
-        return  $this->hasMany(Producto::class);
-    }
-
-    public function producto(){
-        return $this->belongsTo(Producto::class);
+    public function producto_detalle_talla(){
+        return  $this->hasMany(ProductoDetalleTalla::class);
     }
 
 }

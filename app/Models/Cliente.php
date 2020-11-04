@@ -46,9 +46,9 @@ class Cliente extends Model
      * La tabla Clientes pertenece a un sexo
      */
 
-    public function sex()
+    public function sexo()
     {
-        return $this->belongsTo('App\Models\Sexo');
+        return $this->belongsTo(Sexo::class);
     }
 
 }
