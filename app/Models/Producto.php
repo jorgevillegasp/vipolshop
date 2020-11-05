@@ -27,7 +27,6 @@ class Producto extends Model
         'categoria_id',
         'nombre',
         'imagen',
-        'stock',
         'estado'
     ];
 

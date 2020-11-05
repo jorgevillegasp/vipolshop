@@ -24,7 +24,6 @@ class CreateProductosTable extends Migration
             $table->bigInteger('categoria_id')->unsigned()->nullable();
 
             $table->string('nombre', 45);
-            $table->integer('stock');
             $table->boolean('estado');
             $table->timestamps();       
 

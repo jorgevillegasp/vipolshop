@@ -24,7 +24,6 @@ class ProductoFactory extends Factory
         return [
             'categoria_id'  =>  rand(1,2),
             'nombre'        =>  $this->faker->tld,
-            'stock'         =>  rand(1,100),
             'estado'        =>  true,
         ];
     }
