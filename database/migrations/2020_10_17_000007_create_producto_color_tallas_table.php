@@ -13,7 +13,7 @@ class CreateProductoColorTallasTable extends Migration
      */
     public function up()
     {
-        Schema::create('producto_detalle_tallas', function (Blueprint $table) {
+        Schema::create('producto_color_tallas', function (Blueprint $table) {
             /**************************************************
              * Campos de la tabla
              ***************************************************/

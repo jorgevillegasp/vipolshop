@@ -11,7 +11,7 @@ class ProductoColor extends Model
 {
     use HasFactory;
 
-    public $table = 'producto_detalles';
+    public $table = 'producto_colores';
 
     /**
      * Los atributos que son asignables en masa.

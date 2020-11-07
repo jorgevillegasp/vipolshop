@@ -22,7 +22,8 @@ class SeccionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'seccion' => $this->faker->word,
+            'descripcion'   =>  $this->faker->text($maxNbChars = 200),
         ];
     }
 }

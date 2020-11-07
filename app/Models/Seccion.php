@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Seccion extends Model
 {
     use HasFactory;
+    protected $table = "secciones";
+
+    public $fillable = [
+        'seccion',
+        'descripcion'
+    ];
 }
