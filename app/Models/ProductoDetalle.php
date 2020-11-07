@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Color;
+use App\Models\Talla;
 use App\Models\Producto;
 use App\Models\ProductoDetalleTalla;
 use Illuminate\Database\Eloquent\Model;
@@ -38,11 +39,4 @@ class ProductoDetalle extends Model
     {
         return $this->belongsTo(Color::class);
     }
-
-    public function producto()
-    {
-        return $this->belongsTo(Producto::class);
-    }
-
-
 }

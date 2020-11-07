@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\ColorController;
-use App\Http\Livewire\ClienteController;
-use App\Http\Livewire\ProveedorController;
-use App\Http\Livewire\ProductoController;
 use App\Http\Livewire\TallaController;
+use App\Http\Livewire\ClienteController;
+use App\Http\Livewire\ProductoController;
+use App\Http\Livewire\CategoriaController;
+use App\Http\Livewire\ProveedorController;
 use App\Http\Livewire\FormaDePagoController;
 
 
@@ -42,6 +43,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/clientes', ClienteController::Class);
 
     Route::get('/productos', ProductoController::Class);
+
+    Route::get('/categorias', CategoriaController::Class);
 
 
 });

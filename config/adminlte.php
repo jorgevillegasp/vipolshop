@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 return [
 
@@ -268,7 +268,7 @@ return [
         ['header' => 'Administracion'],
         [
             'text' => 'Proveedores',
-            'url'  => 'proveedorES',
+            'url'  => 'proveedores',
             'icon' => 'fas fa-fw fa-hands-helping',
         ],
         [
@@ -291,6 +291,11 @@ return [
             'text'  =>  'Facturas',
             'url'   =>  'facturas',
             'icon'  =>  'fas fa-fw fa-file',
+        ],
+        [
+            'text' => 'Categorias',
+            'url'  => 'categorias',
+            'icon' => 'fas fa-fw fa-hands-helping',
         ],
     ],
 

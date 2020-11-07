@@ -17,11 +17,6 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th>PRODUCTO</th>
-                                    <th>PRECIO</th>
-                                    <th>COLOR</th>
-                                    <th>TALLA</th>
-                                    <th>PRECIO</th>
-                                    <th>STOCK</th>
                                     <th>CATEGORIA</th>
                                     <th>OPCIONES</th>
                                 </tr>
@@ -29,16 +24,8 @@
                             <tbody>
                                 @foreach ($productos as $producto)
                                     <tr>
-                                        <th>
-                                            <img class="img-circle img-size-32 mr-2" src="{{ $producto->imagen }}" width="30" height="200">
-                                            {{ $producto->nombre }}
-                                        </th>
-                                        <td>$ {{ $producto->precio_venta }}</td>
-                                        <td>{{ $producto->color }}</td>
-                                        <td>{{ $producto->talla }}</td>
-                                        <td>{{ $producto->precio_venta }}</td>
-                                        <td>{{ $producto->stock }}</td>
-                                        <td>{{ $producto->categoria }}</td>
+                                        <th>{{ $producto->nombre }}</th>
+                                        <td>{{ $producto->categoria->categoria }}</td>
                                         <td>
                                             <button wire:click='edit({{ $producto->id }})' class="btn">
                                                 <i class="pe-7s-pen pe-lg  text-info"></i>
@@ -58,7 +45,7 @@
                 <!-- /.card -->
             </div>
         </div>
-        {{ $productos->links() }}
+
     </div>
 </div>
 

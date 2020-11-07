@@ -22,7 +22,7 @@ class ProductoDetalleTalla extends Model
      */
     protected $fillable = [
         'talla_id',
-        'producto_detalle_id'
+        'producto_detalle_id',
     ];
     public $timestamps = false;
 
@@ -33,6 +33,7 @@ class ProductoDetalleTalla extends Model
 
     public function producto_detalle()
     {
-        return $this->belongsTo(ProductoDetalle::class);
+        return $this->belongTo(ProductoDetalle::class);
     }
+
 }

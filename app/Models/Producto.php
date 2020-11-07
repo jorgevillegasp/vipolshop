@@ -13,7 +13,6 @@ class Producto extends Model
 {
     use HasFactory;
 
-
     public $table = 'productos';
 
     /**

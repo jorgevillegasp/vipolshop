@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\ProductoDetalleTalla;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -23,8 +22,6 @@ class Talla extends Model
      */
     protected $fillable = [ 'talla' ];
 
-    public function producto_detalle_talla(){
-        return  $this->hasMany(ProductoDetalleTalla::class);
-    }
+    
 
 }

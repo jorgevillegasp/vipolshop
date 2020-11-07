@@ -56,7 +56,7 @@ class ProductoController extends Component
     {
         $this->tallas = Talla::all();
         $this->colores = Color::all();
-        $record = Producto::leftjoin('categorias as c','c.id','productos.categoria_id')
+        /*$record = Producto::leftjoin('categorias as c','c.id','productos.categoria_id')
                         ->leftjoin('producto_detalles as pd','pd.producto_id','productos.id')
                         ->leftjoin('colores','colores.id','pd.color_id')
                         ->leftjoin('producto_detalle_tallas as pdt','pdt.producto_detalle_id','pd.id')
@@ -64,8 +64,9 @@ class ProductoController extends Component
                         ->select('productos.*','c.categoria','pd.imagen','pd.precio_venta','pd.stock','colores.color','t.talla')
                         ->orderBy('productos.id','desc')
                         ->paginate($this->pagination);
-
-        return view('livewire.producto.index',['productos' => $record]);
+        */
+        $productos = Producto::all();
+        return view('livewire.producto.index',['productos' => $productos]);
     }
 
     public function store()
