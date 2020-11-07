@@ -24,6 +24,9 @@ class CreateProductosTable extends Migration
             $table->bigInteger('categoria_id')->unsigned()->nullable();
 
             $table->string('nombre', 45);
+            $table->decimal('precio_venta',5,2);
+            $table->string('imagen_url')->nullable();
+            $table->text('descripcion');
             $table->boolean('estado');
             $table->timestamps();
 

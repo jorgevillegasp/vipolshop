@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\ProductoDetalleTalla;
+use App\Models\ProductoColorTalla;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ProductoDetalleTallaFactory extends Factory
+class ProductoColorTallaFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = ProductoDetalleTalla::class;
+    protected $model = ProductoColorTalla::class;
 
     /**
      * Define the model's default state.
@@ -22,8 +22,8 @@ class ProductoDetalleTallaFactory extends Factory
     public function definition()
     {
         return [
-            'talla_id'            =>  rand(1,4),
-            'producto_detalle_id' =>  rand(1,30),
+            'talla_id'          =>  rand(1,4),
+            'producto_color_id' =>  rand(1,30),
         ];
     }
 }

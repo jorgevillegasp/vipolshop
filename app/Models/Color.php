@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\ProductoDetalle;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -22,10 +21,5 @@ class Color extends Model
 
 
     public $timestamps = false;
-
-    public function producto_detalles(){
-        return $this->belongsTo(ProductoDetalle::class);
-    }
-
 
 }

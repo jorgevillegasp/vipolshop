@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductoDetalleTallasTable extends Migration
+class CreateProductoColorTallasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ class CreateProductoDetalleTallasTable extends Migration
              ***************************************************/
             $table->bigIncrements('id');
             $table->bigInteger('talla_id')->unsigned()->nullable();
-            $table->bigInteger('producto_detalle_id')->unsigned()->nullable();
+            $table->bigInteger('producto_color_id')->unsigned()->nullable();
 
             /*****************************************************************************
              * Declaración de las Claves segundarías que referencia a otra tabla
@@ -28,7 +28,7 @@ class CreateProductoDetalleTallasTable extends Migration
                 ->onDelete('set null')
                 ->onUpdate('cascade');
 
-            $table->foreign('producto_detalle_id')->references('id')->on('producto_detalles')
+            $table->foreign('producto_color_id')->references('id')->on('producto_colores')
                 ->onDelete('set null')
                 ->onUpdate('cascade');
 

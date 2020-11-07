@@ -14,8 +14,7 @@ use App\Models\CompraDetalle;
 use App\Models\Producto;
 use App\Models\Proveedor;
 use App\Models\VentaDetalle;
-use App\Models\ProductoDetalle;
-use App\Models\ProductoDetalleTalla;
+use Database\Factories\ProductoColorFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -45,9 +44,9 @@ class DatabaseSeeder extends Seeder
         Talla::factory()->create(['talla' => 'large']);
         Talla::factory()->create(['talla' => 'extra large']);
 
-        ProductoDetalle::factory(30)->create();
+        ProductoColor::factory(30)->create();
 
-        ProductoDetalleTalla::factory(50)->create();
+        ProductoColorTalla::factory(50)->create();
 
         Proveedor::factory(10)->create();
 

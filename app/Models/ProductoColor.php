@@ -3,13 +3,11 @@
 namespace App\Models;
 
 use App\Models\Color;
-use App\Models\Talla;
-use App\Models\Producto;
-use App\Models\ProductoDetalleTalla;
+use App\Models\ProductoColorTalla;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class ProductoDetalle extends Model
+class ProductoColor extends Model
 {
     use HasFactory;
 
@@ -26,13 +24,12 @@ class ProductoDetalle extends Model
         'producto_id',
         'color_id',
         'imagen',
-        'rrecio_venta',
         'stock'
     ];
 
-    public function producto_detalle_tallas()
+    public function producto_color_tallas()
     {
-        return $this->hasMany(ProductoDetalleTalla::Class);
+        return $this->hasMany(ProductoColorTalla::Class);
     }
 
     public function color()

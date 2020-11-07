@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\ProductoDetalle;
+use App\Models\ProductoColor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ProductoDetalleFactory extends Factory
+class ProductoColorFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = ProductoDetalle::class;
+    protected $model = ProductoColor::class;
 
     /**
      * Define the model's default state.
@@ -24,8 +24,7 @@ class ProductoDetalleFactory extends Factory
         return [
             'producto_id'   =>  rand(1,20),
             'color_id'      =>  rand(1,10),
-            'imagen'        =>  $this->faker->imageUrl($width = 640, $height = 480),
-            'precio_venta'  =>  rand(1,50),
+            'imagen_url'    =>  $this->faker->imageUrl($width = 640, $height = 480),
             'stock'         =>  rand(1,100)
         ];
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductoDetallesTable extends Migration
+class CreateProductoColoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateProductoDetallesTable extends Migration
      */
     public function up()
     {
-        Schema::create('producto_detalles', function (Blueprint $table) {
+        Schema::create('producto_colores', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->bigInteger('producto_id')->unsigned()->nullable();
             $table->bigInteger('color_id')->unsigned()->nullable();
 
-            $table->binary('imagen')->nullable();
-            $table->decimal('precio_venta',5,2);
+            $table->string('imagen_url')->nullable();
             $table->integer('stock');
             $table->timestamps();
             /*****************************************************************************

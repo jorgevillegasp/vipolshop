@@ -7,11 +7,11 @@ use App\Models\ProductoDetalle;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class ProductoDetalleTalla extends Model
+class ProductoColorTalla extends Model
 {
     use HasFactory;
 
-    public $table = 'producto_detalle_tallas';
+    public $table = 'producto_color_tallas';
 
     /**
      * Los atributos que son asignables en masa.
@@ -22,7 +22,7 @@ class ProductoDetalleTalla extends Model
      */
     protected $fillable = [
         'talla_id',
-        'producto_detalle_id',
+        'producto_color_id',
     ];
     public $timestamps = false;
 
@@ -31,9 +31,9 @@ class ProductoDetalleTalla extends Model
         return $this->belongTo(Talla::class);
     }
 
-    public function producto_detalle()
+    public function producto_color()
     {
-        return $this->belongTo(ProductoDetalle::class);
+        return $this->belongTo(ProductoColor::class);
     }
 
 }

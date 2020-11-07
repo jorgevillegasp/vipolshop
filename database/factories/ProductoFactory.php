@@ -24,6 +24,9 @@ class ProductoFactory extends Factory
         return [
             'categoria_id'  =>  rand(1,2),
             'nombre'        =>  $this->faker->tld,
+            'precio_venta'  =>  rand(1,50),
+            'imagen_url'    =>  $this->faker->imageUrl($width = 640, $height = 480),
+            'descripcion'   =>  $this->faker->text($maxNbChars = 200),
             'estado'        =>  true,
         ];
     }
