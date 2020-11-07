@@ -18,10 +18,19 @@ class CreateCategoriasTable extends Migration
              * Campos de la tabla
              ***************************************************/
             $table->bigIncrements('id');
+            $table->bigInteger('seccion_id')->unsigned()->nullable();
             $table->string('categoria',50);
             $table->text('descripcion');
             $table->boolean('estado');
             $table->timestamps();
+
+            /*****************************************************************************
+             * Declaración de las Claves segundarías que referencia a otra tabla
+             ****************************************************************************/
+
+            $table->foreign('seccion_id')->references('id')->on('secciones')
+            ->onDelete('set null')
+            ->onUpdate('cascade');
         });
     }
 

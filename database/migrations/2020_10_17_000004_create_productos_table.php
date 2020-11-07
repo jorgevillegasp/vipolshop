@@ -25,7 +25,7 @@ class CreateProductosTable extends Migration
 
             $table->string('nombre', 45);
             $table->boolean('estado');
-            $table->timestamps();       
+            $table->timestamps();
 
             /*****************************************************************************
              * Declaración de las Claves segundarías que referencia a otra tabla
