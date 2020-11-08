@@ -19,12 +19,9 @@ class TallaController extends Component
     public $titulo = 'Proveedor';
 
     /**
-     * $acción es la acción que se esta realizando en ese momento donde:
-     *
-     * 1 = activa el formulario de ingreso.
-     * 2 = activa el formulario de edición.
+     * Muestra la vista que vamos a utilizar
      */
-    public  $accion = 1;
+    public  $vista = "crear";
 
     //Atributos de la tabla
     public $talla_id;
@@ -51,13 +48,13 @@ class TallaController extends Component
 
         if( $existe->count() > 0) {
             //imprimir mensaje de error
-            $this->resetInput();
+            $this->default();
             return;
         }
         else
         {
             Talla::create(['talla'=> $this->talla]);
-            $this->resetInput();
+            $this->default();
         }
 
     }
@@ -70,7 +67,7 @@ class TallaController extends Component
         $this->talla_id = $datos->id;
         $this->talla = $datos->talla;
 
-        $this->accion = 2;
+        $this->vista = "editar";
 
     }
 
@@ -87,7 +84,7 @@ class TallaController extends Component
 
         if( $existe->count() > 0) {
             //imprimir mensaje de error
-            $this->resetInput();
+            $this->default();
             return;
         }
         //actualizamos los cambios
@@ -95,10 +92,16 @@ class TallaController extends Component
 
 
         //limpiamos los inputs
-        $this->resetInput();
+        $this->default();
 
-        //ponemos accion en 1 para que muestre el formulario de crear
-        $this->accion = 1;
+        //ponemos vista en 1 para que muestre el formulario de crear
+        $this->vista = "crear";
+    }
+
+    public function default()
+    {
+        $this->talla = '';
+        $this->vista = "crear";
     }
 
     public function destroy($id)
@@ -106,10 +109,6 @@ class TallaController extends Component
         Talla::destroy($id);
     }
 
-    public function resetInput()
-    {
-        $this->talla = '';
-    }
 
 
 }

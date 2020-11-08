@@ -1,21 +1,20 @@
 {{-- Le indicamos el titulo --}}
 @section('title', 'Talla')
 
-
-<div class="content">
     <div class="row">
-        <div class="col-md-6">
-            @if ($accion == 1)
-                @include('livewire.talla.agregar')
-            @elseif ($accion == 2)
-                @include('livewire.talla.editar')
-            @endif
-        </div>
-        <div class="col-md-6">
-            @include('livewire.talla.tabla')
+        <div class="card col-lg-9">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6" style="padding-bottom: 40px;">
+                        <div>
+                            @include('comun.alertas')
+                        </div>
+                        @include("livewire.talla.$vista")
+                    </div>
+                    <div class="col-md-6">
+                        @include('livewire.talla.tabla')
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-
-

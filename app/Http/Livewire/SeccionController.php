@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Models\Seccion;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Livewire\WithFileUploads;
 
 class SeccionController extends Component
 {
@@ -16,8 +15,6 @@ class SeccionController extends Component
      * de la tabla, no muestre el error al volver a cargar la tabla.
     */
     use WithPagination;
-
-    use WithFileUploads;
 
     //Indicamos que vamos a usar el tema de bootstrap en la paginación
     protected $paginationTheme = 'bootstrap';

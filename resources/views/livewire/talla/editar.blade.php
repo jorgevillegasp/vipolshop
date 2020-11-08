@@ -1,18 +1,21 @@
-<div class="card card-info">
 
-    <div class="card-header">
-        <h3 class="card-title">Editar Talla</h3>
+<h2>Editar Talla</h2>
+
+@include('livewire.talla.formulario')
+
+<div class="row">
+    <div class="col-6">
+        <button type="submit" wire:click='store' class="btn btn-info">
+            Actualizar
+        </button>
     </div>
-
-    <div class="card-body">
-        @include('livewire.talla.formulario')
+    <div class="col-6">
+        <button wire:click='default' class="btn btn-default float-right">
+            Cancelar
+        </button>
     </div>
-
-    <div class="card-footer">
-        <button type="submit" wire:click='update' class="btn btn-info">Actualizar</button>
-        <button wire:click='cancelar' class="btn btn-default float-right">Cancelar</button>
-    </div>
-
 </div>
+
+
 
 

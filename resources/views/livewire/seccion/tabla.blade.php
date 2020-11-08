@@ -1,6 +1,6 @@
 
 <h2>listado de Secciones</h2>
-<table class="table">
+<table class="table table-hover table-responsive">
     <thead>
         <tr>
             <th style="width: 10px">ID</th>

@@ -15,7 +15,7 @@
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap table-responsive-lg">
-                            <thead class="thead-light">
+                            <thead class="">
                                 <tr>
                                     <th>ID</th>
                                     <th>CEDULA</th>
@@ -25,7 +25,7 @@
                                     <th>CORREO</th>
                                     <th>TELEFONO</th>
                                     <th>EDAD</th>
-                                    <th>OPCIONES</th>
+                                    <th colspan="2">&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,11 +40,13 @@
                                         <td>{{ $cliente->telefono }}</td>
                                         <td>{{ $cliente->fecha_nacimiento }}</td>
                                         <td>
-                                            <button wire:click='edit({{ $cliente->id }})' class="btn">
-                                                <i class="pe-7s-pen pe-lg  text-info"></i>
+                                            <button wire:click='edit({{ $cliente->id }})' class="btn btn-info">
+                                                editar
                                             </button>
-                                            <button wire:click='destroy({{ $cliente->id }})' class="btn">
-                                                <i class="pe-7s-trash pe-lg  text-danger"></i>
+                                        </td>
+                                        <td>
+                                            <button wire:click='destroy({{ $cliente->id }})' class="btn btn-danger">
+                                                eliminar
                                             </button>
                                         </td>
                                     </tr>

@@ -1,10 +1,7 @@
 <div class="card card-info">
 
-    <div class="card-header">
-        <h3 class="card-title">Editar Cliente</h3>
-    </div>
-
     <div class="card-body">
+        <h2>Editar Cliente</h2>
         @include('livewire.cliente.formulario')
     </div>
 

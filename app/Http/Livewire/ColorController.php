@@ -23,7 +23,7 @@ class ColorController extends Component
      * 1 = activa el formulario de ingreso.
      * 2 = activa el formulario de edición.
      */
-    public  $accion = 1;
+    public  $vista = "crear";
 
     //Atributos de la tabla
     public $color_id;
@@ -70,7 +70,7 @@ class ColorController extends Component
         $this->color_id = $datos->id;
         $this->color = $datos->color;
 
-        $this->accion = 2;
+        $this->vista = "editar";
 
     }
 
@@ -99,8 +99,8 @@ class ColorController extends Component
         //limpiamos los inputs
         $this->resetInput();
 
-        //ponemos accion en 1 para que muestre el formulario de crear
-        $this->accion = 1;
+        //ponemos vista en 1 para que muestre el formulario de crear
+        $this->vista = "crear";
     }
 
     public function destroy($id)
