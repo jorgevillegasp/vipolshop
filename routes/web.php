@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\ColorController;
 use App\Http\Livewire\TallaController;
 use App\Http\Livewire\ClienteController;
+use App\Http\Livewire\SeccionController;
 use App\Http\Livewire\ProductoController;
 use App\Http\Livewire\CategoriaController;
 use App\Http\Livewire\ProveedorController;
@@ -45,6 +46,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/productos', ProductoController::Class);
 
     Route::get('/categorias', CategoriaController::Class);
+
+    Route::get('/secciones', SeccionController::Class);
 
 
 });

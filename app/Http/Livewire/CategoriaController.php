@@ -12,13 +12,10 @@ class CategoriaController extends Component
 {
     public function render()
     {
-        //$record = Categoria::all();
+        $record = Categoria::all();
 
-        
-
-        $productos = Producto::all();
         return view('livewire.categoria.index',[
-            'productos' => $productos
+            'productos' => $record
             ]);
     }
 }

@@ -65,8 +65,10 @@ class ProductoController extends Component
                         ->orderBy('productos.id','desc')
                         ->paginate($this->pagination);
         */
-        $productos = Producto::all();
-        return view('livewire.producto.index',['productos' => $productos]);
+
+        $record = Producto::all()->paginate($this->pagination);
+
+        return view('livewire.producto.index',['productos' => $record]);
     }
 
     public function store()
