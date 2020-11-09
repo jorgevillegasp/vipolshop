@@ -51,7 +51,7 @@ class SeccionController extends Component
             'descripcion'=>  $this->descripcion
         ]);
 
-        $this->resetInput();
+        $this->default();
     }
 
     /**
@@ -86,7 +86,7 @@ class SeccionController extends Component
         if( $existe->count() > 0) {
             //imprimir mensaje de error
             session()->flash('mensaje-error', 'El color ya existe');
-            $this->resetInput();
+            $this->default();
             return;
         }
         //actualizamos los cambios
@@ -98,7 +98,7 @@ class SeccionController extends Component
 
 
         //limpiamos los inputs
-        $this->resetInput();
+        $this->default();
 
         $this->vista = 'crear';
     }
@@ -111,10 +111,12 @@ class SeccionController extends Component
         Seccion::destroy($id);
     }
 
-    public function resetInput()
+    public function default()
     {
         $this->seccion = '';
         $this->descripcion = '';
+
+        $this->vista = "crear";
     }
 
 }

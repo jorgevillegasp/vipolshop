@@ -3,7 +3,7 @@
     <thead>
         <tr>
             <th style="width: 10px">ID</th>
-            <th>Color</th>
+            <th style="width: 150px">Color</th>
             <th colspan="2">&nbsp;</th>
         </tr>
     </thead>

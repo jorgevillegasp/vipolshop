@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-6">
-        <button type="submit" wire:click='store' class="btn btn-info">
+        <button type="submit" wire:click='update' class="btn btn-info">
             Actualizar
         </button>
     </div>

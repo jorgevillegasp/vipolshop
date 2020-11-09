@@ -2,10 +2,15 @@
 
 @include('livewire.color.formulario')
 
-<button type="submit" wire:click='store' class="btn btn-info">
-    Guardar
-</button>
-
-<button wire:click='resetInput' class="btn btn-default float-right">
-    Cancelar
-</button>
+<div class="row">
+    <div class="col-6">
+        <button type="submit" wire:click='store' class="btn btn-info">
+            Guardar
+        </button>
+    </div>
+    <div class="col-6">
+        <button wire:click='default' class="btn btn-default float-right">
+            Cancelar
+        </button>
+    </div>
+</div>

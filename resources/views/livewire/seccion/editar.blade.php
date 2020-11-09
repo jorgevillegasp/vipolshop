@@ -2,6 +2,16 @@
 
 @include('livewire.seccion.formulario')
 
-<button class="btn btn-info" type="button" wire:click='update'>
-    Actualizar
-</button>
+
+<div class="row">
+    <div class="col-6">
+        <button type="submit" wire:click='update' class="btn btn-info">
+            Actualizar
+        </button>
+    </div>
+    <div class="col-6">
+        <button wire:click='default' class="btn btn-default float-right">
+            Cancelar
+        </button>
+    </div>
+</div>

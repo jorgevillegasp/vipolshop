@@ -1,11 +1,12 @@
-<h2>Nueva Talla</h2>
+<h2>Editar Categoria</h2>
 
-@include('livewire.talla.formulario')
+@include('livewire.categoria.formulario')
+
 
 <div class="row">
     <div class="col-6">
-        <button class="btn btn-info" type="button" wire:click='store'>
-            Guardar
+        <button type="submit" wire:click='update' class="btn btn-info">
+            Actualizar
         </button>
     </div>
     <div class="col-6">

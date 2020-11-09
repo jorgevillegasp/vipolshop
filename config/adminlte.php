@@ -286,16 +286,23 @@ return [
             'url'  => 'tallas',
             'icon' => 'fas fa-fw fa-user',
         ],
-        ['header' => 'Reportes'],
+        ['header' => 'Produccion'],
+        
         [
-            'text'  =>  'Facturas',
-            'url'   =>  'facturas',
-            'icon'  =>  'fas fa-fw fa-file',
+            'text' => 'Secciones',
+            'url'  => 'secciones',
+            'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Categorias',
             'url'  => 'categorias',
             'icon' => 'fas fa-fw fa-hands-helping',
+        ],
+        ['header' => 'Reportes'],
+        [
+            'text'  =>  'Facturas',
+            'url'   =>  'facturas',
+            'icon'  =>  'fas fa-fw fa-file',
         ],
     ],
 

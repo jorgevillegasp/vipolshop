@@ -18,6 +18,9 @@
     @livewireStyles
     <link rel="stylesheet" href="{{ asset('pe7-icon-master\dist\dist\pe-icon-7-stroke.min.css') }}">
 
+    <!-- Select2 -->
+  <link rel="stylesheet" href="{{ asset('vendor/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 
 
 
@@ -70,6 +73,8 @@
 <script src="{{ asset('vendor/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('vendor/dist/js/demo.js') }}"></script>
+<!-- Select2 -->
+<script src="{{ asset('vendor/select2/js/select2.full.min.js') }}"></script>
 
 
 {{--

@@ -8,7 +8,7 @@ use Livewire\WithPagination;
 
 class TallaController extends Component
 {
-    
+
     //Para corregir el error de la paginacion cuando se elimina un registro de la tabla, no muestre el error al volver a cargar la tabla.
     use WithPagination;
 

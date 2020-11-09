@@ -1,6 +1,7 @@
-<h2>Nueva Talla</h2>
+<h2>Nueva Categoria</h2>
 
-@include('livewire.talla.formulario')
+@include('livewire.categoria.formulario')
+
 
 <div class="row">
     <div class="col-6">

@@ -50,14 +50,14 @@ class ColorController extends Component
 
         if( $existe->count() > 0) {
             //imprimir mensaje de error
-            $this->resetInput();
+            $this->default();
             return;
         }
         else
         {
             Color::create(['color'=> $this->color]);
             session()->flash('mensaje', 'Se creo el color '. $this->color .' con exito');
-            $this->resetInput();
+            $this->default();
         }
 
     }
@@ -88,7 +88,7 @@ class ColorController extends Component
         if( $existe->count() > 0) {
             //imprimir mensaje de error
             session()->flash('mensaje-error', 'El color ya existe');
-            $this->resetInput();
+            $this->default();
             return;
         }
         //actualizamos los cambios
@@ -97,7 +97,7 @@ class ColorController extends Component
 
 
         //limpiamos los inputs
-        $this->resetInput();
+        $this->default();
 
         //ponemos vista en 1 para que muestre el formulario de crear
         $this->vista = "crear";
@@ -109,9 +109,10 @@ class ColorController extends Component
         session()->flash('mensaje', 'Se elimino con exito');
     }
 
-    public function resetInput()
+    public function default()
     {
         $this->color = '';
+        $this->vista = "crear";
     }
 
 
