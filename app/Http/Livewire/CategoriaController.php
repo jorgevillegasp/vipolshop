@@ -7,6 +7,7 @@ use App\Models\Categoria;
 use App\Models\Seccion;
 use Livewire\WithPagination;
 use phpDocumentor\Reflection\Types\This;
+use App\Http\Livewire\SeccionController;
 
 class CategoriaController extends Component
 {
@@ -37,12 +38,12 @@ class CategoriaController extends Component
     //paginacion de las tablas
     public $pagination = 10;
 
-    
+
 
     public function render()
     {
         $this->secciones = Seccion::orderBy('id','desc')->get();
-        
+
         if(strlen($this->search) > 0)
         {
             $record = Categoria::leftjoin('secciones as s','s.id','categorias.seccion_id')
@@ -69,7 +70,7 @@ class CategoriaController extends Component
                 ]);
         }
     }
-    
+
     /**
     * Almacene un recurso recién creado en el almacenamiento.
     */
@@ -115,7 +116,7 @@ class CategoriaController extends Component
 
         $this->vista = 'editar';
     }
-    
+
     /**
     * Actualiza el recurso especificado en el almacenamiento.
     */
@@ -149,13 +150,13 @@ class CategoriaController extends Component
             }
         }
     }
-    
+
     /**
     * Elimina el recurso especificado del almacenamiento.
     */
     public function destroy($id)
     {
-        //
+        Categoria::destroy($id);
     }
 
     public function default()
@@ -167,5 +168,8 @@ class CategoriaController extends Component
 
         $this->vista = 'crear';
     }
+
+
+
 
 }

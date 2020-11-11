@@ -1,5 +1,12 @@
 
-<h2>listado de Secciones</h2>
+<div class="row justify-content-between">
+    <div class="col-8">
+        <h2>listado de Secciones</h2>
+    </div>
+    <div class="col-4">
+        @include('comun.search')
+    </div>
+</div>
 <table class="table table-hover table-responsive">
     <thead>
         <tr>

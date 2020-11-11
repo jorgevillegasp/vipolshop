@@ -30,6 +30,8 @@ class SeccionController extends Component
     //paginacion de las tablas
     public $pagination = 10;
 
+    public $goCategoria = false;
+
     public function render()
     {
         $record = Seccion::orderBy('id','desc')->paginate($this->pagination);
@@ -50,6 +52,8 @@ class SeccionController extends Component
             'seccion'    =>  $this->seccion,
             'descripcion'=>  $this->descripcion
         ]);
+
+            $this->goCategoria = true;
 
         $this->default();
     }

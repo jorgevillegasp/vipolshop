@@ -1,6 +1,5 @@
-
 <form method="" action="">
-    {{ csrf_token() }}
+    {{ csrf_field() }}
     <div class="form-group">
         <label>Seccion</label>
         <input class="form-control" type="text" wire:model="seccion">
