@@ -14,6 +14,12 @@
 @stop
 
 @section('css')
+<style>
+    .content-header {
+        padding: 5px .5rem;
+    }
+</style>
+
 
     @livewireStyles
     <link rel="stylesheet" href="{{ asset('pe7-icon-master\dist\dist\pe-icon-7-stroke.min.css') }}">

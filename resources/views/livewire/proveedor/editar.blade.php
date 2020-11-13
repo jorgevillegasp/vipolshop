@@ -1,11 +1,8 @@
 <div class="card card-primary">
 
-    <div class="card-header">
-        <h3 class="card-title">Editar Proveedor</h3>
-    </div>
-
     <div class="card-body">
-        @include('proveedor.formulario')
+        <h2 >Editar Proveedor</h2>
+        @include('livewire.proveedor.formulario')
     </div>
 
     <div class="card-footer">

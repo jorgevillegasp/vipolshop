@@ -51,7 +51,7 @@ class ProveedorController extends Component
         $proveedores = Proveedor::orderBy('id','desc')->paginate(8);
 
         return view(
-            'proveedor.index',
+            'livewire.proveedor.index',
             ['proveedores' => $proveedores]
         );
     }

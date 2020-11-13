@@ -8,14 +8,14 @@
 
 {{-- Muestra la tabla del listado de los proveedores --}}
 @if ($accion == 1)
-    @include('proveedor.tabla')
+    @include('livewire.proveedor.tabla')
 
 {{-- muestra el formulario para ingresar un nuevo proveedor --}}
 @elseif ($accion == 2)
-    @include('proveedor.agregar')
+    @include('livewire.proveedor.agregar')
 
 {{-- muestra el formulario para editar los datos del proveedor --}}
 @elseif($accion == 3)
-    @include('proveedor.editar')
+    @include('livewire.proveedor.editar')
 
 @endif

@@ -1,5 +1,5 @@
 {{-- Le indicamos el titulo  --}}
-@section('title', 'Categoria')
+@section('title', 'categoria')
 
 {{-- Le indicamos el titulo  --}}
 @section('title', 'Categorias')
