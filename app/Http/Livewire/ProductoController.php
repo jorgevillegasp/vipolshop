@@ -66,7 +66,12 @@ class ProductoController extends Component
                         ->paginate($this->pagination);
         */
 
-        $record = Producto::all()->paginate($this->pagination);
+        $record =  Producto::leftjoin('categorias as c','c.id','productos.categoria_id')
+                    ->leftjoin('secciones as s','s.id','c.seccion_id')
+                    ->select('productos.*','c.categoria','s.seccion')
+                    ->ordeRBy('productoS.id','desc')
+                    ->paginate($this->pagination);
+        //Producto::all()->paginate($this->pagination);
 
         return view('livewire.producto.index',['productos' => $record]);
     }

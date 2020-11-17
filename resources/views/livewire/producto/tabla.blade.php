@@ -1,53 +1,51 @@
 <div class="card">
-    <div class="card-body ">
-        <h3 class="text-center">LISTADO DE PRODUCTOS</h3>
-        <div class="container">
-            <div class="row justify-content-center">
-                <button wire:click='doAction(2)' class="btn btn-primary mx-1">Agregar producto</button>
-                <a href="/productos/reporte-pdf" target="_blank" class="btn btn-info">Reporte</a>
+    <div class="card-body">
+        <div class="row justify-content-between">
+            <div class="col-8">
+                <h2>Listado de Productos</h2>
+            </div>
+            <div class="col-4">
+                @include('comun.search')
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <!-- /.card-header -->
-                    <div class="card-body table-responsive p-0">
-                        <table class="table table-hover text-nowrap table-responsive-lg">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th>PRODUCTO</th>
-                                    <th>CATEGORIA</th>
-                                    <th>OPCIONES</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($productos as $producto)
-                                    <tr>
-                                        <th>{{ $producto->nombre }}</th>
-                                        <td>{{ $producto->categoria->categoria }}</td>
-                                        <td>
-                                            <button wire:click='edit({{ $producto->id }})' class="btn">
-                                                <i class="pe-7s-pen pe-lg  text-info"></i>
-                                            </button>
-                                            <button wire:click='destroy({{ $producto->id }})' class="btn">
-                                                <i class="pe-7s-trash pe-lg  text-danger"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-            </div>
-        </div>
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th style="width: 10px">ID</th>
+                    <th>PRODUCTO</th>
+                    <th>PRECIO</th>
+                    <th>CATEGORIA</th>
+                    <th>SECCION</th>
+                    <th colspan="2">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($productos as $producto)
+                    <tr>
+                        <th>{{ $producto->id }}</th>
+                        <th>{{ $producto->nombre }}</th>
+                        <td>{{ $producto->precio_venta }}</td>
+                        <td>{{ $producto->categoria }}</td>
+                        <td>{{ $producto->seccion }}</td>
+                        <td>
+                            <button wire:click='edit({{ $producto->id }})' class="btn">
+                                <i class="pe-7s-pen pe-lg  text-info"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button wire:click='destroy({{ $producto->id }})' class="btn">
+                                <i class="pe-7s-trash pe-lg  text-danger"></i>
+                            </button>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        {{ $productos->links() }}
 
     </div>
 </div>
+
 
 
 <div class="row">
@@ -76,8 +74,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            <img src="dist/img/default-150x150.png" alt="Product 1"
-                                class="img-circle img-size-32 mr-2">
+                            <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
                             Some Product
                         </td>
                         <td>$13 USD</td>
@@ -96,8 +93,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="dist/img/default-150x150.png" alt="Product 1"
-                                class="img-circle img-size-32 mr-2">
+                            <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
                             Another Product
                         </td>
                         <td>$29 USD</td>
@@ -116,8 +112,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="dist/img/default-150x150.png" alt="Product 1"
-                                class="img-circle img-size-32 mr-2">
+                            <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
                             Amazing Product
                         </td>
                         <td>$1,230 USD</td>
@@ -136,8 +131,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="dist/img/default-150x150.png" alt="Product 1"
-                                class="img-circle img-size-32 mr-2">
+                            <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
                             Perfect Item
                             <span class="badge bg-danger">NEW</span>
                         </td>
