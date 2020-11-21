@@ -60,17 +60,18 @@
                 </div>
                 <div class="row">
                     <div>
-                        <div class="card " >
+                        <div class="card ">
                             <div class="card-body ">
                                 <div wire:loading wire:target="imagen" class="spinner-border text-info" role="status">
                                     <span class="sr-only">Cargando imagen...</span>
                                 </div>
                                 @if ($imagen)
-                                <span class="text-info">Vista Previa de la imagen :</span>
-                                <div class="imagen" style="width='150px'; height='200px';">
-                                    <img src="{{ $imagen->temporaryUrl() }}" class="card-img-top" width="40" height="200" >
-                                </div>
-                            @endif
+                                    <span class="text-info">Vista Previa de la imagen :</span>
+                                    <div class="imagen" style="width='150px'; height='200px';">
+                                        <img src="{{ $imagen->temporaryUrl() }}" class="card-img-top" width="40"
+                                            height="200">
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -78,7 +79,7 @@
                 </div>
             </div>
         </div>
+
+        @include('livewire.producto.formulario2')
     </div>
 </form>
-
-

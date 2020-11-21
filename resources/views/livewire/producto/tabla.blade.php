@@ -1,48 +1,80 @@
-<div class="card">
-    <div class="card-body">
-        <div class="row justify-content-between">
-            <div class="col-8">
-                <h2>Listado de Productos</h2>
+<div class="content">
+    <div class="card">
+        <div class="card-body ">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="d-inline mr-2 float-left">Listado de Productos</h2>
+                    <button wire:click='create' class="btn btn-primary d-inline mb-2">Nuevo</button>
+                </div>
+                <div class="col-md-4">
+                    @include('comun.search')
+                </div>
             </div>
-            <div class="col-4">
-                @include('comun.search')
+            <div class="row">
+                <div class="col-12">
+                    <div class=" table-responsive p-0">
+                        <table class="table table-hover table-responsive">
+                            <thead class="">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Categoria</th>
+                                    <th>Seccion</th>
+                                    <th>Estado</th>
+                                    <th>Ventas</th>
+                                    <th colspan="3">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($productos as $producto)
+                                    <tr>
+                                        <th>{{ $producto->id }}</th>
+                                        <td>{{ $producto->nombre }}</td>
+                                        <td>{{ $producto->precio_venta }}</td>
+                                        <td>{{ $producto->categoria }}</td>
+                                        <td>{{ $producto->seccion }}</td>
+                                        <td>
+                                            @if ($producto->estado == '1')
+                                            Habilitado
+                                            @else
+                                            Desabilitado
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <small class="text-success mr-1">
+                                                <i class="fas fa-arrow-up"></i>
+                                                12%
+                                            </small>
+                                            12,000 Vendidos
+                                        </td>
+                                        <td>
+                                            <button wire:click='edit({{ $producto->id }})' class="btn btn-info">
+                                                Detalle
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button wire:click='edit({{ $producto->id }})' class="btn btn-primary">
+                                                Editar
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button wire:click='destroy({{ $producto->id }})' class="btn btn-danger">
+                                                Eliminar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+
+                        <div class="pagination pagination-sm m-0 float-right">
+                            {{ $productos->links() }}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <table class="table table-hover table-responsive">
-            <thead>
-                <tr>
-                    <th style="width: 10px">ID</th>
-                    <th>PRODUCTO</th>
-                    <th>PRECIO</th>
-                    <th>CATEGORIA</th>
-                    <th>SECCION</th>
-                    <th colspan="2">&nbsp;</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($productos as $producto)
-                    <tr>
-                        <th>{{ $producto->id }}</th>
-                        <th>{{ $producto->nombre }}</th>
-                        <td>{{ $producto->precio_venta }}</td>
-                        <td>{{ $producto->categoria }}</td>
-                        <td>{{ $producto->seccion }}</td>
-                        <td>
-                            <button wire:click='edit({{ $producto->id }})' class="btn">
-                                <i class="pe-7s-pen pe-lg  text-info"></i>
-                            </button>
-                        </td>
-                        <td>
-                            <button wire:click='destroy({{ $producto->id }})' class="btn">
-                                <i class="pe-7s-trash pe-lg  text-danger"></i>
-                            </button>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-        {{ $productos->links() }}
-
     </div>
 </div>
 

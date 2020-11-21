@@ -56,15 +56,6 @@ class ProductoController extends Component
     {
         $this->tallas = Talla::all();
         $this->colores = Color::all();
-        /*$record = Producto::leftjoin('categorias as c','c.id','productos.categoria_id')
-                        ->leftjoin('producto_detalles as pd','pd.producto_id','productos.id')
-                        ->leftjoin('colores','colores.id','pd.color_id')
-                        ->leftjoin('producto_detalle_tallas as pdt','pdt.producto_detalle_id','pd.id')
-                        ->leftjoin('tallas as t','t.id','pdt.talla_id')
-                        ->select('productos.*','c.categoria','pd.imagen','pd.precio_venta','pd.stock','colores.color','t.talla')
-                        ->orderBy('productos.id','desc')
-                        ->paginate($this->pagination);
-        */
 
         $record =  Producto::leftjoin('categorias as c','c.id','productos.categoria_id')
                     ->leftjoin('secciones as s','s.id','c.seccion_id')
@@ -92,6 +83,72 @@ class ProductoController extends Component
 
         $this->resetInput();
         $this->action = 1;
+
+    }
+
+    public function create()
+    {
+        $this->action = 2;
+    }
+
+    public function show($id)
+    {
+
+        //buscamos el producto en la base de datos
+        $producto = Proveedor::find($id);
+
+        if($producto->count() > 0)
+        {
+
+        }
+
+
+
+    }
+
+    public function update()
+    {
+        //Validamos los campos.
+        $this->validate([
+            'categoria'  =>  'required',
+            'descripcion'=>  'required',
+            'estado'     =>  'required',
+            'seccion_id' =>  'required',
+        ]);
+
+        //Consultamos si la seccion existe
+        $existe_seccion = Seccion::find($this->seccion_id);
+        //Consultamos si la categoria existe
+        $categoria = Categoria::find($this->categoria_id);
+
+        //Validamos si la seccion existe
+        if($existe_seccion->count() > 0) {
+            //Validamos si existe la categoria que vamos a actualizar
+            if($categoria->count() > 0) {
+                //Actualizamos la Categoria en la base de datos
+                $categoria->update([
+                    'seccion_id'    => $this->seccion_id,
+                    'categoria'     => $this->categoria,
+                    'descripcion'   => $this->descripcion,
+                    'estado'        => $this->estado
+                ]);
+                $this->default();
+            }
+        }
+    }
+
+    public function edit($id)
+    {
+        //Verificamos que existe
+        $datos = Producto::find($id);
+
+        $this->producto_id   = $datos->producto_id;
+        $this->categoria_id = $datos->id;
+        $this->categoria    = $datos->categoria;
+        $this->descripcion  = $datos->descripcion;
+        $this->estado       = $datos->estado;
+
+        $this->vista = 'editar';
 
     }
 
