@@ -33,13 +33,13 @@
                                         <td>{{ $compra->costo_compra }}</td>
                                         <td>{{ $compra->iva }}</td>
                                         <td>
-                                            <button wire:click='editar({{ $compra->id }})' type="button"
+                                            <button wire:click='edit({{ $compra->id }})' type="button"
                                                 class="btn btn-info">
                                                 editar
                                             </button>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-danger">
+                                            <button  wire:click='destroy({{ $compra->id }})' type="button" class="btn btn-danger">
                                                 Eliminar
                                             </button>
                                         </td>

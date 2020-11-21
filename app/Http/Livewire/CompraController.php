@@ -26,9 +26,19 @@ class CompraController extends Component
      */
     public  $action = 1;
 
-    //Atributos de la tabla
-    public $color_id;
-    public $color;
+    //Atributos de la tabla compras
+    public $compra_id;
+    public $proveedor_id;
+    public $fecha_compra;
+    public $costo_compra;
+    public $iva;
+
+    //Atributos de la tabla compra_detalles
+    public $compra_detalle_id;
+    public $producto_id;
+    public $cantidad;
+    public $valor_unidad;
+    public $total;
 
     //Para la busqueda
     public $search;
@@ -67,5 +77,32 @@ class CompraController extends Component
                 ['compras' => $record]
             );
         }
+    }
+
+    public function edit($id)
+    {
+        //Verificamos que existe
+        $datos = Compra::find($id);
+
+        $this->compra_id     = $datos->id;
+        $this->proveedor_id  = $datos->proveddor_id;
+        $this->fecha_compra  = $datos->fecha_compra;
+        $this->costo_compra  = $datos->costo_compra;
+        $this->iva           = $datos->iva;
+        /*
+        //obtener los datos de los detalles de la compra
+        $record = CompraDetalles::select('compra_detalles.*')
+                                ->where('compra_detalles.compras_id','compras.id')
+                                ->ordeBy('id','desc');
+        */
+        $this->accion = 3;
+    }
+
+    /**
+    * Elimina el recurso especificado del almacenamiento.
+    */
+    public function destroy($id)
+    {
+        Compra::destroy($id);
     }
 }
