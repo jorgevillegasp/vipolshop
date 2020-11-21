@@ -10,6 +10,7 @@ use App\Http\Livewire\ProductoController;
 use App\Http\Livewire\CategoriaController;
 use App\Http\Livewire\ProveedorController;
 use App\Http\Livewire\FormaDePagoController;
+use App\Http\Livewire\CompraController;
 
 
 /*
@@ -48,6 +49,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/categorias', CategoriaController::Class);
 
     Route::get('/secciones', SeccionController::Class);
+
+    Route::get('/compras', CompraController::Class);
 
 
 });

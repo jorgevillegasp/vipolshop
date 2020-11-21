@@ -15,19 +15,21 @@ class ColorController extends Component
     protected $paginationTheme = 'bootstrap';
 
     //titulo de la pagina
-    public $titulo = 'Proveedor';
+    public $titulo = 'Compra';
 
     /**
      * $acción es la acción que se esta realizando en ese momento donde:
      *
-     * 1 = activa el formulario de ingreso.
-     * 2 = activa el formulario de edición.
+     * 1 = activa la tabla del listado de clientes.
+     * 2 = activa el formulario de ingreso.
+     * 3 = activa el formulario de edición.
      */
-    public  $vista = "crear";
+    public  $accion = 1;
 
     //Atributos de la tabla
     public $color_id;
     public $color;
+    public $pagination = 10;
 
     public function render()
     {
