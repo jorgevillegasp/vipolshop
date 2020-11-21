@@ -36,6 +36,12 @@ class ProveedorController extends Component
     public $telefono;
     public $deuda;
 
+    //Para la busqueda
+    public $search;
+
+    //paginacion
+    public $pagination = 10;
+
     // Reglas (rules): Aquí establecemos las reglas de validación para las propiedades de un componente.
     protected $rules = [
         'ruc'       => 'required|numeric',
@@ -48,12 +54,32 @@ class ProveedorController extends Component
 
     public function render()
     {
-        $proveedores = Proveedor::orderBy('id','desc')->paginate(8);
+        if(strlen($this->search) > 0)
+        {
+            $record = Proveedor::where('proveedores.nombre', 'like', '%' .  $this->search . '%')
+                        ->orWhere('proveedores.ruc', 'like', '%' .  $this->search . '%')
+                        ->orWhere('proveedores.direccion', 'like', '%' .  $this->search . '%')
+                        ->orWhere('proveedores.correo', 'like', '%' .  $this->search . '%')
+                        ->orWhere('proveedores.telefono', 'like', '%' .  $this->search . '%')
+                        ->orWhere('proveedores.deuda', 'like', '%' .  $this->search . '%')
+                        ->paginate($this->pagination);
 
-        return view(
-            'livewire.proveedor.index',
-            ['proveedores' => $proveedores]
-        );
+            return view(
+                'livewire.proveedor.index',
+                ['proveedores' => $record]
+            );
+
+        }
+        else {
+
+			$record = Proveedor::orderBy('id','desc')->paginate(8);
+
+            return view(
+                'livewire.proveedor.index',
+                ['proveedores' => $record]
+            );
+        }
+
     }
 
     public function agregar()
